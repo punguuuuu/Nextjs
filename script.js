@@ -50,13 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let loadedCount = 0;
 
     images.forEach((img) => {
-      img.onload = () => {
+      if (img.complete) {
         loadedCount++;
-        if (loadedCount === images.length) {
-          updateButtons();
-        }
-      };
+      } else {
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === images.length) {
+            updateButtons();
+          }
+        };
+      }
     });
+
+    if (loadedCount === images.length) {
+      updateButtons();
+    }
 
     function updateButtons() {
       prevBtn.classList.toggle("disabled", gallery.scrollLeft <= 0);
