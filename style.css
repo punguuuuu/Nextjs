@@ -113,7 +113,7 @@ a:hover {
 
 .gallery img {
   width: 25%;
-  height: 10%;
+  height: auto;
   display: inline-block;
   box-sizing: border-box;
 }
