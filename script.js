@@ -102,7 +102,6 @@ for (count = 0; count < images.length; count++) {
 
     modal.style.display = "block";
     modalImg.src = this.src;
-    modalImg.alt = this.alt;
     captionText.innerHTML = this.alt;
   };
 }
