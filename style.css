@@ -16,11 +16,13 @@ body {
 
 #main {
   padding: 0;
-  transition: margin-left 0.5s;
+  transition: margin-left 0.5s, margin-right 0.5s;
 }
 
 h2 {
   font-size: 120px;
+  font-weight: normal;
+  margin-top: 0;
   padding-top: 50px;
 }
 
@@ -30,7 +32,7 @@ a {
 }
 
 a:hover {
-  display: inline-block;
+  display: block;
   animation: vibrate 0.2s;
   animation-iteration-count: infinite;
   color: rgb(59, 59, 59);
@@ -86,7 +88,9 @@ a:hover {
 }
 
 .menuClose {
+  display: block;
   text-align: center;
+  font-size: 60px;
   color: white;
   margin-bottom: 50px;
 }

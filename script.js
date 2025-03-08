@@ -1,3 +1,11 @@
+function changePage(page) {
+  if (!window.location.pathname.includes(page)) {
+    window.location.href = page;
+  } else {
+    showMenu(false);
+  }
+}
+
 let gifPlaying = false;
 function playGif() {
   if (gifPlaying) {

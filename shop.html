@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <title>pungu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="shop.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <script src="script.js" defer></script> -->
+    <script src="shop.js" defer></script>
+  </head>
+  <body>
+    <ul id="menu" class="menu">
+      <li>
+        <a href="#close" class="menuClose" onclick="showMenu(false)">X</a>
+      </li>
+      <li><a href="#index" onclick="changePage('index.html')">Home</a></li>
+      <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
+    </ul>
+
+    <div id="main" class="main">
+      <button id="menuBtn" onclick="showMenu(true)">Menu</button>
+
+      <h1 style="font-weight: normal; margin-bottom: -50px">Shop</h1>
+      <p>Buy freshly made food here !</p>
+
+      <div class="items-container">
+        <h2 style="font-size: 100px">Bread</h2>
+        <div class="item">
+          <img src="./images/food/bread.png" alt="bread" />
+          <img src="./images/food/butter toast.png" alt="Butter on toast" />
+          <img src="./images/food/avocado toast.png" alt="Avocado toast" />
+          <img src="./images/food/cheese on bread.png" alt="Cheese on bread" />
+          <img src="./images/food/egg on bread.png" alt="Egg on bread" />
+          <img src="./images/food/polo bun.png" alt="Polo bun" />
+        </div>
+      </div>
+
+      <div class="items-container">
+        <h2 style="font-size: 100px">Snacks</h2>
+        <div class="item">
+          <img src="./images/food/lemon.png" alt="Lemon" />
+          <img src="./images/food/chili.png" alt="Chili" />
+          <img src="./images/food/durian.png" alt="Durian" />
+          <img src="./images/food/egg.png" alt="Sunny side up" />
+          <img src="./images/food/pizza.png" alt="Pizza slice" />
+          <img src="./images/food/sushi.png" alt="Sushi" />
+          <img src="./images/food/pretzel.png" alt="Pretzel" />
+          <img src="./images/food/nasi lemak.png" alt="Nasi Lemak" />
+          <img src="./images/food/tomato.png" alt="Tomato" />
+          <img src="./images/food/nacho chips.png" alt="Nachos" />
+          <img src="./images/food/wasabi.png" alt="Sushi with wasabi" />
+          <img src="./images/food/taco.png" alt="Taco" />
+          <img
+            src="./images/food/pasta meatballs.png"
+            alt="Pasta with meatballs"
+          />
+          <img src="./images/food/fried pizza.png" alt="Fried pizza" />
+        </div>
+      </div>
+
+      <div class="items-container">
+        <h2 style="font-size: 100px">Desert</h2>
+        <div class="item">
+          <img src="./images/food/ginger.png" alt="Gingerbreadman" />
+          <img src="./images/food/pancake.png" alt="Fluffy pancake" />
+          <img src="./images/food/fruit cake.png" alt="Fruit cake" />
+          <img
+            src="./images/food/swissroll matcha.png"
+            alt="Matcha swissroll"
+          />
+          <img
+            src="./images/food/swissroll strawberry.png"
+            alt="Strawberry swissroll"
+          />
+          <img src="./images/food/swissroll.png" alt="Chocolate swissroll" />
+          <img src="./images/food/puff.png" alt="Cream puff" />
+          <img
+            src="./images/food/mango shaved ice.png"
+            alt="Mango shaved ice"
+          />
+          <img src="./images/food/candy cane.png" alt="Candy cane" />
+          <img src="./images/food/cream cone.png" alt="Cream cone" />
+          <img src="./images/food/crepe.png" alt="Crepe" />
+          <img src="./images/food/ice cream.png" alt="Ice cream" />
+        </div>
+      </div>
+    </div>
+
+    <div id="detail" class="detail">
+      <a href="#close" class="menuClose" onclick="showDetail(false)">X</a>
+      <img class="detail-content" id="image" />
+      <div id="caption"></div>
+      <button class="buyBtn">Buy</button>
+    </div>
+  </body>
+</html>

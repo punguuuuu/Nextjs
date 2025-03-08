@@ -12,9 +12,11 @@
 
   <body>
     <ul id="menu" class="menu">
-      <li><a href="#" class="menuClose" onclick="showMenu(false)">X</a></li>
-      <li><a href="#2">Home</a></li>
-      <li><a href="#3">Shop</a></li>
+      <li>
+        <a href="#close" class="menuClose" onclick="showMenu(false)">X</a>
+      </li>
+      <li><a href="#home" onclick="changePage('index.html')">Home</a></li>
+      <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
     </ul>
 
     <div id="main" class="main">
@@ -54,7 +56,7 @@
         class="no-model"
       />
 
-      <h2 id="food" style="font-weight: normal; margin-top: 0px">Food</h2>
+      <h2 id="food">Food</h2>
       <div class="gallery-container">
         <div class="gallery">
           <img src="./images/food/ginger.png" alt="Gingerbreadman" />
@@ -82,7 +84,7 @@
         class="no-model"
       />
 
-      <h2 id="cats" style="font-weight: normal; margin-top: 0px">Cats</h2>
+      <h2 id="cats">Cats</h2>
       <div class="gallery-container">
         <div class="gallery">
           <img src="./images/cat/roomba.png" alt="Roomba" />
@@ -104,9 +106,7 @@
         class="no-model"
       />
 
-      <h2 id="random" style="font-weight: normal; margin-top: 0px">
-        Random Stuff
-      </h2>
+      <h2 id="random">Random Stuff</h2>
       <div class="gallery-container">
         <div class="gallery">
           <img src="./images/random/share food.png" alt="Share your food" />
@@ -141,7 +141,7 @@
         class="no-model"
       />
 
-      <h2 id="suggestion" style="font-weight: normal">Suggestions</h2>
+      <h2 id="suggestion" style="margin-top: 150px">Suggestions</h2>
       <p style="margin-bottom: 10px">Suggest things for me to draw !</p>
       <div class="input-container" id="input">
         <input type="text" class="lineEdit" /><button onclick="submitText()">
