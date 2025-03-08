@@ -37,6 +37,12 @@ a:hover {
   cursor: pointer;
 }
 
+.reward {
+  height: 0;
+  overflow: hidden;
+  transition: 0.8s;
+}
+
 /* .menu {
   list-style-type: none;
   background-color: white;
@@ -233,13 +239,17 @@ button:hover {
 }
 
 #toTopBtn {
-  display: none;
+  width: 0px;
   z-index: 2;
   position: fixed;
   top: 40px;
   right: 50px;
   font-size: 50px;
   border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: 0.5s;
+  padding: 0;
 }
 
 #toTopBtn:hover {
