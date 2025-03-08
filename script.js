@@ -144,4 +144,8 @@ function showMenu(show) {
     menu.style.width = "0";
     main.style.marginLeft = "0";
   }
+
+  setTimeout(() => {
+    window.scrollTo(0, window.scrollY);
+  }, 0);
 }
