@@ -11,145 +11,166 @@
   </head>
 
   <body>
-    <!-- <ul class="menu">
-      <li><a href="#1">Food</a></li>
-      <li><a href="#2">Cats</a></li>
-      <li><a href="#3">Pungu</a></li>
-    </ul> -->
-    <button id="toTopBtn" onclick="toTop()">Back to top</button>
+    <ul id="menu" class="menu">
+      <li><a href="#" class="menuClose" onclick="showMenu(false)">X</a></li>
+      <li><a href="#2">Home</a></li>
+      <li><a href="#3">Shop</a></li>
+    </ul>
 
-    <h1 style="font-weight: normal">
-      Hi "; <br />
-      I draw <a href="#food">Food</a>, <a href="#cats">Cats</a>, and
-      <a href="#random">Random Stuff</a>
-    </h1>
+    <div id="main" class="main">
+      <button id="menuBtn" onclick="showMenu(true)">Menu</button>
+      <button id="toTopBtn" onclick="toTop()">Back to top</button>
 
-    <div style="position: relative">
-      <p class="secret" style="left: 86%; top: 12%">???</p>
-      <div class="tooltip">
-        <span class="tooltiptext" style="margin-left: 270px">Spin me !!!</span>
-        <img
-          id="gif"
-          class="no-model"
-          src="spin0.png"
-          style="
-            width: 700px;
-            width: 700px;
-            align-content: center;
-            cursor: pointer;
-          "
-        />
+      <h1 style="font-weight: normal">
+        Hi "; <br />
+        I draw <a href="#food">Food</a>, <a href="#cats">Cats</a>, and
+        <a href="#random">Random Stuff</a>
+      </h1>
+
+      <div style="position: relative">
+        <p class="secret" style="left: 86%; top: 12%">???</p>
+        <div class="tooltip">
+          <span class="tooltiptext" style="margin-left: 270px"
+            >Spin me !!!</span
+          >
+          <img
+            id="gif"
+            class="no-model"
+            src="spin0.png"
+            style="
+              width: 700px;
+              width: 700px;
+              align-content: center;
+              cursor: pointer;
+            "
+          />
+        </div>
       </div>
-    </div>
 
-    <img
-      src="./images/section/food.png"
-      alt="divider"
-      style="width: 98%; margin-top: 100px"
-      class="no-model"
-    />
+      <img
+        src="./images/section/food.png"
+        alt="divider"
+        style="width: 98%; margin-top: 100px"
+        class="no-model"
+      />
 
-    <h2 id="food" style="font-weight: normal; margin-top: 0px">Food</h2>
-    <div class="gallery-container">
-      <div class="gallery">
-        <img src="./images/food/ginger.png" alt="Gingerbreadman" />
-        <img src="./images/food/lemon.png" alt="Lemon" />
-        <img src="./images/food/bread.png" alt="Butter on toast" />
-        <img src="./images/food/durian.png" alt="Durian" />
-        <img src="./images/food/egg.png" alt="Sunny side up" />
-        <img src="./images/food/pancake.png" alt="Fluffy pancake" />
-        <img src="./images/food/pizza.png" alt="Pizza slice" />
-        <img src="./images/food/sushi.png" alt="Sushi" />
-        <img src="./images/food/pretzel.png" alt="Pretzel" />
-        <img src="./images/food/noodle.png" alt="Cup noodles" />
-        <img src="./images/food/tomato.png" alt="Tomato" />
-        <img src="./images/food/ketchup.png" alt="Ketchup" />
+      <h2 id="food" style="font-weight: normal; margin-top: 0px">Food</h2>
+      <div class="gallery-container">
+        <div class="gallery">
+          <img src="./images/food/ginger.png" alt="Gingerbreadman" />
+          <img src="./images/food/lemon.png" alt="Lemon" />
+          <img src="./images/food/bread.png" alt="Butter on toast" />
+          <img src="./images/food/durian.png" alt="Durian" />
+          <img src="./images/food/egg.png" alt="Sunny side up" />
+          <img src="./images/food/pancake.png" alt="Fluffy pancake" />
+          <img src="./images/food/pizza.png" alt="Pizza slice" />
+          <img src="./images/food/sushi.png" alt="Sushi" />
+          <img src="./images/food/pretzel.png" alt="Pretzel" />
+          <img src="./images/food/noodle.png" alt="Cup noodles" />
+          <img src="./images/food/tomato.png" alt="Tomato" />
+          <img src="./images/food/ketchup.png" alt="Ketchup" />
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
       </div>
-      <a class="prev">&#10094;</a>
-      <a class="next">&#10095;</a>
-    </div>
-    <p style="padding: 30px">I like drawing faces on food</p>
+      <p style="padding: 30px">I like drawing faces on food</p>
 
-    <img
-      src="./images/section/cat.png"
-      alt="divider"
-      style="width: 100%; margin-top: 100px"
-      class="no-model"
-    />
+      <img
+        src="./images/section/cat.png"
+        alt="divider"
+        style="width: 100%; margin-top: 100px"
+        class="no-model"
+      />
 
-    <h2 id="cats" style="font-weight: normal; margin-top: 0px">Cats</h2>
-    <div class="gallery-container">
-      <div class="gallery">
-        <img src="./images/cat/roomba.png" alt="Roomba" />
-        <img src="./images/cat/moai.png" alt="Moai" />
-        <img src="./images/cat/potat.png" alt="Cat in potato bag" />
-        <img src="./images/cat/catpuccino.png" alt="Catpuccino" />
-        <img src="./images/cat/pool.png" alt="Cat in pool" />
-        <img src="./images/cat/harshbrown.png" alt="Harshbrown" />
+      <h2 id="cats" style="font-weight: normal; margin-top: 0px">Cats</h2>
+      <div class="gallery-container">
+        <div class="gallery">
+          <img src="./images/cat/roomba.png" alt="Roomba" />
+          <img src="./images/cat/moai.png" alt="Moai" />
+          <img src="./images/cat/potat.png" alt="Cat in potato bag" />
+          <img src="./images/cat/catpuccino.png" alt="Catpuccino" />
+          <img src="./images/cat/pool.png" alt="Cat in pool" />
+          <img src="./images/cat/harshbrown.png" alt="Harshbrown" />
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
       </div>
-      <a class="prev">&#10094;</a>
-      <a class="next">&#10095;</a>
-    </div>
-    <p style="padding: 30px">Cats in random places</p>
+      <p style="padding: 30px">Cats in random places</p>
 
-    <img
-      src="./images/section/random.png"
-      alt="divider"
-      style="width: 98%; margin-top: 100px"
-      class="no-model"
-    />
+      <img
+        src="./images/section/random.png"
+        alt="divider"
+        style="width: 98%; margin-top: 100px"
+        class="no-model"
+      />
 
-    <h2 id="random" style="font-weight: normal; margin-top: 0px">
-      Random Stuff
-    </h2>
-    <div class="gallery-container">
-      <div class="gallery">
-        <img src="./images/random/share food.png" alt="Share your food" />
-        <img src="./images/random/debt.png" alt="Generational debt" />
-        <img src="./images/random/i dont.png" alt="I dont get it" />
-        <img src="./images/random/posture.png" alt="Posture reveal" />
-        <img src="./images/random/i miss my brain.png" alt="I miss my brain" />
-        <img src="./images/random/lock in.png" alt="Lock in" />
-        <img src="./images/random/where on earth.png" alt="Where on earth ?" />
-        <img
-          src="./images/random/fly me to the moon.png"
-          alt="Fly me to the moon"
-        />
-        <img src="./images/random/not listening.png" alt="Not listening" />
-        <img src="./images/random/speaking.png" alt="Speaking" />
+      <h2 id="random" style="font-weight: normal; margin-top: 0px">
+        Random Stuff
+      </h2>
+      <div class="gallery-container">
+        <div class="gallery">
+          <img src="./images/random/share food.png" alt="Share your food" />
+          <img src="./images/random/debt.png" alt="Generational debt" />
+          <img src="./images/random/i dont.png" alt="I dont get it" />
+          <img src="./images/random/posture.png" alt="Posture reveal" />
+          <img
+            src="./images/random/i miss my brain.png"
+            alt="I miss my brain"
+          />
+          <img src="./images/random/lock in.png" alt="Lock in" />
+          <img
+            src="./images/random/where on earth.png"
+            alt="Where on earth ?"
+          />
+          <img
+            src="./images/random/fly me to the moon.png"
+            alt="Fly me to the moon"
+          />
+          <img src="./images/random/not listening.png" alt="Not listening" />
+          <img src="./images/random/speaking.png" alt="Speaking" />
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
       </div>
-      <a class="prev">&#10094;</a>
-      <a class="next">&#10095;</a>
-    </div>
-    <p style="padding: 30px">Random stuff with random captions</p>
+      <p style="padding: 30px">Random stuff with random captions</p>
 
-    <img
-      src="./images/section/jeans.png"
-      alt="divider"
-      style="width: 100%; margin-top: 100px"
-      class="no-model"
-    />
+      <img
+        src="./images/section/jeans.png"
+        alt="divider"
+        style="width: 100%; margin-top: 100px"
+        class="no-model"
+      />
 
-    <h2 id="suggestion" style="font-weight: normal">Suggestions</h2>
-    <p style="margin-bottom: 10px">Suggest things for me to draw !</p>
-    <div class="input-container" id="input">
-      <input type="text" class="lineEdit" /><button onclick="submitText()">
-        Submit
-      </button>
-    </div>
+      <h2 id="suggestion" style="font-weight: normal">Suggestions</h2>
+      <p style="margin-bottom: 10px">Suggest things for me to draw !</p>
+      <div class="input-container" id="input">
+        <input type="text" class="lineEdit" /><button onclick="submitText()">
+          Submit
+        </button>
+      </div>
 
-    <div id="reward" , style="display: block; margin-top: 50px"></div>
+      <div id="rewardContainer" , style="display: block">
+        <p id="message"></p>
+        <div id="reward" , class="reward">
+          <img
+            src="./images/food/cake.png"
+            alt="reward"
+            style="margin-top: -100px"
+          />
+        </div>
+      </div>
 
-    <div style="position: relative; margin-top: 100px">
-      <img src="./images/cat/hi.png" alt="hi" style="cursor: pointer" />
-      <div class="caption">that's it, bye ";</div>
-    </div>
+      <div style="position: relative; margin-top: 100px">
+        <img src="./images/cat/hi.png" alt="hi" style="cursor: pointer" />
+        <div class="caption">that's it, bye ";</div>
+      </div>
 
-    <!-- The Modal -->
-    <div class="modal" id="modal">
-      <span class="close">X</span>
-      <img class="modal-content" id="image" />
-      <div id="caption"></div>
+      <!-- The Modal -->
+      <div class="modal" id="modal">
+        <span class="close">X</span>
+        <img class="modal-content" id="image" />
+        <div id="caption"></div>
+      </div>
     </div>
   </body>
 </html>

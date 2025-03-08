@@ -8,15 +8,15 @@ html {
 }
 
 body {
-  /* background-image: url("265.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100vh; */
   margin: 0px;
   font-family: custom, sans-serif;
   font-size: 60px;
   text-align: center;
+}
+
+#main {
+  padding: 0;
+  transition: margin-left 0.5s;
 }
 
 h2 {
@@ -37,17 +37,25 @@ a:hover {
   cursor: pointer;
 }
 
-/* .menu {
-  list-style-type: none;
-  background-color: white;
+.reward {
+  height: 0;
   overflow: hidden;
+  transition: 0.8s;
+}
+
+.menu {
+  position: fixed;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  list-style: none;
+  background-color: black;
   margin: 0px;
-  padding: 0px;
-  position: sticky;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
+  padding-top: 50px;
+  padding-left: 0;
+  overflow: hidden;
+  z-index: 5;
+  transition: width 0.5s;
 }
 
 .menu li {
@@ -58,7 +66,7 @@ a:hover {
 
 .menu li a {
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   text-decoration: none;
   padding: 15px;
@@ -67,7 +75,28 @@ a:hover {
 .menu li a:hover {
   animation: vibrate 0.2s;
   animation-iteration-count: infinite;
-} */
+}
+
+#menuBtn {
+  position: fixed;
+  z-index: 2;
+  top: 40px;
+  left: 20px;
+  border: none;
+}
+
+.menuClose {
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.menuClose:hover {
+  color: rgb(219, 219, 219);
+  cursor: pointer;
+  animation: vibrate 0.2s;
+  animation-iteration-count: infinite;
+}
 
 .secret {
   position: absolute;
@@ -233,13 +262,16 @@ button:hover {
 }
 
 #toTopBtn {
-  display: none;
+  width: 0px;
   z-index: 2;
   position: fixed;
   top: 40px;
   right: 50px;
-  font-size: 50px;
   border: none;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: 0.5s;
+  padding: 0;
 }
 
 #toTopBtn:hover {

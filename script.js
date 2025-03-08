@@ -17,24 +17,17 @@ function playGif() {
 function submitText() {
   let inputText = document.querySelector(".lineEdit");
   let reward = document.getElementById("reward");
-  let text = document.createElement("div");
-  let img = document.createElement("img");
+  let text = document.getElementById("message");
 
-  while (reward.firstChild) {
-    reward.removeChild(reward.firstChild);
-  }
-
-  text.textContent =
+  text.innerHTML =
     inputText.value.trim() === ""
       ? "It's EMPTY !"
       : "Thanks ! Here's your reward \";";
 
-  reward.appendChild(text);
-
   if (inputText.value.trim() !== "") {
-    img.src = "./images/food/cake.png";
-    img.alt = "cake";
-    reward.appendChild(img);
+    reward.style.height = "600px";
+  } else {
+    reward.style.height = "0px";
   }
 }
 
@@ -130,13 +123,26 @@ window.onscroll = function () {
     document.body.scrollTop > 1000 ||
     document.documentElement.scrollTop > 1000
   ) {
-    toTopBtn.style.display = "block";
+    toTopBtn.style.width = "200px";
   } else {
-    toTopBtn.style.display = "none";
+    toTopBtn.style.width = "0px";
   }
 };
 
 function toTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+let menu = document.getElementById("menu");
+let main = document.getElementById("main");
+
+function showMenu(show) {
+  if (show) {
+    menu.style.width = "300px";
+    main.style.marginLeft = "300px";
+  } else {
+    menu.style.width = "0";
+    main.style.marginLeft = "0";
+  }
 }
