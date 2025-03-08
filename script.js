@@ -1,3 +1,9 @@
+function changePage(page) {
+  if (!window.location.pathname.includes(page)) {
+    window.location.href = page;
+  }
+}
+
 let gifPlaying = false;
 function playGif() {
   if (gifPlaying) {
