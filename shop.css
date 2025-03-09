@@ -10,7 +10,7 @@
 }
 
 .item img {
-  width: 20%;
+  height: 40vh;
   box-sizing: border-box;
 }
 
@@ -36,15 +36,16 @@
 }
 
 .detail-content {
-  width: 80%;
+  height: 40%;
 }
 
 .buyBtn {
   width: 60%;
-  height: 9%;
+  height: 8%;
   color: white;
-  font-size: 80px;
+  font-size: 70px;
   border: 3px solid white;
+  overflow: hidden;
   margin-top: 50px;
 }
 
