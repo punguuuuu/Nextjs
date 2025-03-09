@@ -32,7 +32,7 @@ a {
 }
 
 a:hover {
-  display: block;
+  display: inline-block;
   animation: vibrate 0.2s;
   animation-iteration-count: infinite;
   color: rgb(59, 59, 59);

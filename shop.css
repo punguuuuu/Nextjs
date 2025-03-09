@@ -52,3 +52,18 @@
   background-color: rgb(235, 235, 235);
   color: black;
 }
+
+.detailBtn {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 60px;
+}
+
+.detailBtn:hover {
+  color: white;
+  display: block;
+  animation: vibrate 0.2s;
+  animation-iteration-count: infinite;
+}
