@@ -28,7 +28,7 @@ div.item .desc {
 .detail {
   position: fixed;
   height: 100%;
-  width: 0%;
+  width: 0;
   top: 0;
   right: 0;
   list-style: none;
@@ -63,7 +63,6 @@ div.item .desc {
 .detailBtn {
   display: block;
   color: white;
-  width: 500px;
   margin-bottom: 30px;
   font-size: 60px;
 }
@@ -73,4 +72,12 @@ div.item .desc {
   display: block;
   animation: vibrate 0.2s;
   animation-iteration-count: infinite;
+}
+
+#caption {
+  scale: 1;
+}
+
+.show {
+  animation: zoom 0.5s;
 }

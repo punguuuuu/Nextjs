@@ -43,8 +43,10 @@ for (let count = 0; count < items.length; count++) {
 }
 
 let detail = document.getElementById("detail");
+let buyBtn = document.getElementById("buyBtn");
 
 function showDetail(show) {
+  void window
   if (show) {
     detail.style.width = "500px";
     main.style.marginRight = "500px";
