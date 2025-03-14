@@ -23,22 +23,28 @@ function showMenu(show) {
   }, 0);
 }
 
-let images = document.getElementsByTagName("img");
-let modalImg = document.getElementById("image");
-let captionText = document.getElementById("caption");
-let count;
-for (count = 0; count < images.length; count++) {
-  images[count].onclick = function () {
+let items = document.getElementsByClassName("item");
+let itemImg = document.getElementById("image");
+let itemCaption = document.getElementById("caption");
+for (let count = 0; count < items.length; count++) {
+  let item = items[count];
+  let desc = document.createElement("p");
+  desc.classList.add("desc");
+
+  let image = item.querySelector('img');
+  desc.innerHTML = image.alt;
+  item.appendChild(desc);
+
+  item.onclick = function () {
     showDetail(true);
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
+    itemImg.src = image.src;
+    itemCaption.innerHTML = image.alt;
   };
 }
 
 let detail = document.getElementById("detail");
 
 function showDetail(show) {
-  console.log("HERE");
   if (show) {
     detail.style.width = "500px";
     main.style.marginRight = "500px";

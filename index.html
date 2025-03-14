@@ -8,6 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="script.js" defer></script>
+
+    <!-- <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@latest/prop-types.js"></script>
+    <script type="text/babel" src="react.js"></script> -->
   </head>
 
   <body>
@@ -19,7 +25,7 @@
       <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
     </ul>
 
-    <div id="main" class="main">
+    <main id="main" class="main">
       <button id="menuBtn" onclick="showMenu(true)">Menu</button>
       <button id="toTopBtn" onclick="toTop()">Back to top</button>
 
@@ -68,7 +74,6 @@
           <img src="./images/food/pizza.png" alt="Pizza slice" />
           <img src="./images/food/sushi.png" alt="Sushi" />
           <img src="./images/food/pretzel.png" alt="Pretzel" />
-          <img src="./images/food/noodle.png" alt="Cup noodles" />
           <img src="./images/food/tomato.png" alt="Tomato" />
           <img src="./images/food/ketchup.png" alt="Ketchup" />
         </div>
@@ -171,6 +176,6 @@
         <img class="modal-content" id="image" />
         <div id="caption"></div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

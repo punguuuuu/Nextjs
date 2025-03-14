@@ -1,22 +1,28 @@
 .items-container {
   position: relative;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .item {
-  width: 90%;
-  gap: 10px;
-  margin-top: -50px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.item:hover {
+  border: 2px solid rgb(219, 217, 217);
+  cursor: pointer;
 }
 
 .item img {
+  width: auto;
   height: 40vh;
-  box-sizing: border-box;
 }
 
-.item img:hover {
-  cursor: pointer;
-  border: 2px solid rgb(219, 217, 217);
+div.item .desc {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .detail {
@@ -29,7 +35,6 @@
   background-color: rgb(17, 17, 17);
   margin: 0px;
   padding-top: 50px;
-  padding-right: 0;
   overflow: hidden;
   z-index: 5;
   transition: width 0.5s;
@@ -37,6 +42,7 @@
 
 .detail-content {
   height: 40%;
+  width: auto;
 }
 
 .buyBtn {
@@ -56,8 +62,8 @@
 
 .detailBtn {
   display: block;
-  text-decoration: none;
   color: white;
+  width: 500px;
   margin-bottom: 30px;
   font-size: 60px;
 }

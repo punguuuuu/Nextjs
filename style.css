@@ -17,6 +17,7 @@ body {
 #main {
   padding: 0;
   transition: margin-left 0.5s, margin-right 0.5s;
+  animation: fade 0.9s;
 }
 
 h2 {
@@ -324,5 +325,14 @@ button:hover {
   }
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
   }
 }
