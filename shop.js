@@ -31,7 +31,7 @@ for (let count = 0; count < items.length; count++) {
   let desc = document.createElement("p");
   desc.classList.add("desc");
 
-  let image = item.querySelector('img');
+  let image = item.querySelector("img");
   desc.innerHTML = image.alt;
   item.appendChild(desc);
 
@@ -43,19 +43,45 @@ for (let count = 0; count < items.length; count++) {
 }
 
 let detail = document.getElementById("detail");
-let buyBtn = document.getElementById("buyBtn");
+let cartBtn = document.getElementById("cartBtn");
+let message = document.getElementById("message");
+let quantity = document.getElementById("quantityValue");
+let value = parseInt(quantity.innerHTML);
 
 function showDetail(show) {
-  void window
+  void window;
   if (show) {
-    detail.style.width = "500px";
+    detail.style.right = "0";
     main.style.marginRight = "500px";
+    message.style.opacity = 0;
+    quantity.innerHTML = 1;
+    value = 1;
   } else {
-    detail.style.width = "0";
+    detail.style.right = "-500px";
     main.style.marginRight = "0";
   }
 
   setTimeout(() => {
     window.scrollTo(0, window.scrollY);
   }, 0);
+}
+
+function changeQuantity(increment) {
+  if (increment) {
+    value++;
+  } else if (value > 1) {
+    value--;
+  }
+  quantity.innerHTML = value;
+}
+
+function toCart() {
+  let cartBtn = document.getElementById("cartBtn");
+  cartBtn.style.display = "none";
+  message.style.opacity = 0;
+
+  setTimeout(() => {
+    cartBtn.style.display = "block";
+    message.style.opacity = 1;
+  }, 1700);
 }

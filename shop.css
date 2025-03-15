@@ -1,4 +1,9 @@
+body {
+  overflow-x: hidden;
+}
+
 .items-container {
+  margin: 0 50px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -28,16 +33,16 @@ div.item .desc {
 .detail {
   position: fixed;
   height: 100%;
-  width: 0;
+  width: 500px;
   top: 0;
-  right: 0;
+  right: -500px;
   list-style: none;
   background-color: rgb(17, 17, 17);
   margin: 0px;
   padding-top: 50px;
   overflow: hidden;
   z-index: 5;
-  transition: width 0.5s;
+  transition: right 0.5s;
 }
 
 .detail-content {
@@ -45,17 +50,20 @@ div.item .desc {
   width: auto;
 }
 
-.buyBtn {
+#cartBtn {
+  position: absolute;
   width: 60%;
   height: 8%;
   color: white;
+  background-color: rgb(17, 17, 17);
   font-size: 70px;
   border: 3px solid white;
   overflow: hidden;
-  margin-top: 50px;
+  bottom: 130px;
+  left: 105px;
 }
 
-.buyBtn:hover {
+#cartBtn:hover {
   background-color: rgb(235, 235, 235);
   color: black;
 }
@@ -74,10 +82,39 @@ div.item .desc {
   animation-iteration-count: infinite;
 }
 
-#caption {
-  scale: 1;
+.quantity {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 10px;
+  left: 115px;
+  bottom: 230px;
 }
 
-.show {
-  animation: zoom 0.5s;
+.quantity .quantityValue {
+  color: white;
+  display: inline;
+  margin: 0 20px;
+}
+
+.quantity .quantityBtn {
+  padding: 0 50px;
+  color: white;
+}
+
+.loading {
+  position: absolute;
+  height: 95px;
+  left: 205px;
+  bottom: 122px;
+}
+
+#message {
+  position: absolute;
+  opacity: 0;
+  font-size: 50px;
+  color: rgb(82, 177, 82);
+  left: 150px;
+  bottom: 20px;
 }

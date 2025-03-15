@@ -28,7 +28,7 @@
       <h2 style="font-size: 100px">Bread</h2>
       <div class="items-container">
         <div class="item">
-          <img src="./images/food/bread.png" alt="bread" />
+          <img src="./images/food/bread.png" alt="Bread" />
         </div>
         <div class="item">
           <img src="./images/food/butter toast.png" alt="Butter on toast" />
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <h2 style="font-size: 100px">Snacks</h2>
+      <h2 style="font-size: 100px; padding-top: 150px">Snacks</h2>
       <div class="items-container">
         <div class="item">
           <img src="./images/food/lemon.png" alt="Lemon" />
@@ -96,7 +96,7 @@
         </div>
       </div>
 
-      <h2 style="font-size: 100px">Dessert</h2>
+      <h2 style="font-size: 100px; padding-top: 150px">Dessert</h2>
       <div class="items-container">
         <div class="item">
           <img src="./images/food/ginger.png" alt="Gingerbreadman" />
@@ -150,7 +150,14 @@
       <a href="#close" class="detailBtn" onclick="showDetail(false)">X</a>
       <img class="detail-content" id="image" />
       <p id="caption"></p>
-      <button class="buyBtn">Add to cart</button>
+      <div class="quantity">
+        <a class="quantityBtn" onclick="changeQuantity(false)">-</a>
+        <p id="quantityValue" class="quantityValue">1</p>
+        <a class="quantityBtn" onclick="changeQuantity(true)">+</a>
+      </div>
+      <img class="loading" src="loading.gif" />
+      <button id="cartBtn" onclick="toCart()">Add to cart</button>
+      <p id="message">Added to cart !</p>
     </div>
   </body>
 </html>
