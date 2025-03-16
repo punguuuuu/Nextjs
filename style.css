@@ -3,6 +3,22 @@
   src: url("custom_font.ttf");
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,6 +31,7 @@ body {
 }
 
 #main {
+  position: relative;
   padding: 0;
   transition: margin-left 0.5s, margin-right 0.5s;
   animation: fade 0.9s;

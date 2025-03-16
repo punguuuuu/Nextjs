@@ -9,6 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="shop.js" defer></script>
+
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@latest/prop-types.js"></script>
+    <script type="text/babel" src="react.js"></script>
   </head>
   <body>
     <ul id="menu" class="menu">
@@ -21,6 +33,7 @@
 
     <div id="main" class="main">
       <button id="menuBtn" onclick="showMenu(true)">Menu</button>
+      <button id="cartBtn" onclick="showCart(true)">Cart</button>
 
       <h1 style="font-weight: normal; margin-bottom: -50px">Shop</h1>
       <p>Buy freshly made food here !</p>
@@ -146,18 +159,24 @@
       </div>
     </div>
 
-    <div id="detail" class="detail">
-      <a href="#close" class="detailBtn" onclick="showDetail(false)">X</a>
+    <div id="detail">
+      <a href="#close" class="containerBtn" onclick="showDetail(false)">X</a>
       <img class="detail-content" id="image" />
       <p id="caption"></p>
-      <div class="quantity">
+      <!-- <div class="quantity">
         <a class="quantityBtn" onclick="changeQuantity(false)">-</a>
         <p id="quantityValue" class="quantityValue">1</p>
         <a class="quantityBtn" onclick="changeQuantity(true)">+</a>
-      </div>
+      </div> -->
       <img class="loading" src="loading.gif" />
-      <button id="cartBtn" onclick="toCart()">Add to cart</button>
+      <button id="addBtn" onclick="addToCart()">Add to cart</button>
       <p id="message">Added to cart !</p>
+    </div>
+
+    <div id="cart">
+      <a href="#close" class="containerBtn" onclick="showCart(false)">X</a>
+      <div id="cartInfo"></div>
+      <button id="checkoutBtn" onclick="checkout()">Checkout</button>
     </div>
   </body>
 </html>

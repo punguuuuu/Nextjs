@@ -39,23 +39,25 @@ for (let count = 0; count < items.length; count++) {
     showDetail(true);
     itemImg.src = image.src;
     itemCaption.innerHTML = image.alt;
+    // window.cartDesc = image.alt;
+    // window.cartImgSrc = image.src;
   };
 }
 
 let detail = document.getElementById("detail");
-let cartBtn = document.getElementById("cartBtn");
+let addBtn = document.getElementById("addBtn");
 let message = document.getElementById("message");
-let quantity = document.getElementById("quantityValue");
-let value = parseInt(quantity.innerHTML);
+// let quantity = document.getElementById("quantityValue");
+// let value = parseInt(quantity.innerHTML);
 
 function showDetail(show) {
-  void window;
   if (show) {
+    showCart(false);
     detail.style.right = "0";
     main.style.marginRight = "500px";
     message.style.opacity = 0;
-    quantity.innerHTML = 1;
-    value = 1;
+    // quantity.innerHTML = 1;
+    // value = 1;
   } else {
     detail.style.right = "-500px";
     main.style.marginRight = "0";
@@ -75,13 +77,39 @@ function changeQuantity(increment) {
   quantity.innerHTML = value;
 }
 
-function toCart() {
-  let cartBtn = document.getElementById("cartBtn");
-  cartBtn.style.display = "none";
+window.cartItems = window.cartItems || [];
+function addToCart() {
+  let addBtn = document.getElementById("addBtn");
+  addBtn.style.display = "none";
   message.style.opacity = 0;
+  // window.cartQuantity = value;
+
+  const itemInfo = {
+    desc: itemCaption.innerHTML,
+    src: itemImg.src,
+  };
+
+  window.cartItems.push(itemInfo);
 
   setTimeout(() => {
-    cartBtn.style.display = "block";
+    addBtn.style.display = "block";
     message.style.opacity = 1;
+    window.dispatchEvent(new Event("update"));
   }, 1700);
+}
+
+function showCart(show) {
+  let cart = document.getElementById("cart");
+  if (show) {
+    showDetail(false);
+    cart.style.right = "0";
+    main.style.marginRight = "500px";
+  } else {
+    cart.style.right = "-500px";
+    main.style.marginRight = "0";
+  }
+}
+
+function checkout() {
+  window.open("resume.pdf", "_blank");
 }
