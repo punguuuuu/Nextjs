@@ -111,5 +111,5 @@ function showCart(show) {
 }
 
 function checkout() {
-  window.open("resume.pdf", "_blank");
+  // window.open("resume.pdf", "_blank");
 }
