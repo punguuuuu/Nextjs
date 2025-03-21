@@ -50,7 +50,7 @@ div.item .desc {
   width: auto;
 }
 
-#addBtn {
+.customBtn {
   position: absolute;
   width: 60%;
   height: 8%;
@@ -110,11 +110,10 @@ div.item .desc {
   bottom: 122px;
 }
 
-#message {
+.message {
   position: absolute;
   opacity: 0;
   font-size: 50px;
-  color: rgb(82, 177, 82);
   left: 150px;
   bottom: 20px;
 }
@@ -145,25 +144,34 @@ div.item .desc {
 }
 
 #cartInfo {
-  height: 70vh;
+  height: 67vh;
   overflow-y: auto;
   direction: rtl;
 }
 
-#checkoutBtn {
-  position: absolute;
-  width: 60%;
-  height: 8%;
-  color: white;
-  background-color: rgb(17, 17, 17);
-  font-size: 70px;
-  border: 3px solid white;
-  overflow: hidden;
-  bottom: 80px;
-  left: 105px;
+#checkoutBtn:hover {
+  background-color: rgb(235, 235, 235);
+  color: black;
 }
 
-#checkoutBtn:hover {
+#emailContainer {
+  position: absolute;
+  background-color: rgb(17, 17, 17);
+  justify-items: center;
+  width: 100%;
+  height: 450px;
+  bottom: -450px;
+  transition: 0.3s;
+}
+
+#confirmBtn {
+  margin-top: 30px;
+  color: white;
+  background-color: rgb(17, 17, 17);
+  border: 3px solid white;
+}
+
+#confirmBtn:hover {
   background-color: rgb(235, 235, 235);
   color: black;
 }

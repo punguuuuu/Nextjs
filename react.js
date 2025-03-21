@@ -3,12 +3,16 @@ class Cart extends React.Component {
     super(props);
     this.state = {
       items: Array.from(window.cartItems?.values() || []),
+      orderPlaced: false,
     };
   }
 
   componentDidMount() {
     window.addEventListener("update", () => {
-      this.setState({ items: Array.from(window.cartItems.values()) });
+      this.setState({ 
+        items: Array.from(window.cartItems.values()),
+        orderPlaced: window.orderPlaced
+       });
     });
   }
 
@@ -39,7 +43,9 @@ class Cart extends React.Component {
     return (
       <div style={{ padding: "10px" }}>
         {this.state.items.length === 0 ? (
-          <p style={{ color: "white" }}>Cart is empty</p>
+          this.state.orderPlaced ? 
+          <p style={{ color: "green", direction:"ltr" }}>Order placed !</p>
+          :  <p style={{ color: "white" }}>Cart is empty</p>
         ) : (
           this.state.items.map((item, index) => (
             <div style={this.itemStyle} key={index}>

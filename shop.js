@@ -110,6 +110,44 @@ function showCart(show) {
   }
 }
 
+window.orderPlaced = false;
 function checkout() {
-  // window.open("resume.pdf", "_blank");
+  if(window.cartItems.length == 0){
+    document.getElementById("warning").style.opacity = 1;
+    window.orderPlaced = false;
+    window.dispatchEvent(new Event("update"));
+    return;
+  }
+  document.getElementById("emailContainer").style.bottom = 0;
+  document.getElementById("warning").style.opacity = 0;
+
+  // const date = new Date();
+  // const orderItems = window.cartItems.map(item => `
+  //   <tr style="vertical-align: top; height: 61px;">
+  //     <td style="padding: 24px 8px 0 4px; display: inline-block; width: max-content;"><img style="height: 64px;" src="{{image_url}}" alt="item" height="64px"></td>
+  //     <td style="padding: 24px 8px 0 8px; width: 100%;">
+  //       <div>${item.desc}</div>
+  //       <div style="font-size: 14px; color: #888; padding-top: 4px;">&nbsp;</div>
+  //     </td>
+  //     <td style="padding: 24px 4px 0 0; white-space: nowrap;"><strong>0.00</strong></td>
+  //   </tr>
+  // `).join("");
+
+  // emailjs.send("service_eqflx1d", "template_u9siuy8", {
+  //   email: "vinegarpotatosour@gmail.com",
+  //   orderItems: orderItems,
+  //   time: date.toLocaleString(),
+  // }, "LyjyTLGN4DHGtdTq1")
+  
+  // .then(response => {
+  //     console.log("Email sent successfully!", response);
+  // })
+  
+  // .catch(error => {
+  //     console.error("Error sending email:", error);
+  // });
+
+  window.cartItems.length = 0;
+  window.orderPlaced = true;
+  window.dispatchEvent(new Event("update"));
 }

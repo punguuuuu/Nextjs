@@ -34,6 +34,19 @@ function submitText() {
 
   if (inputText.value.trim() !== "") {
     reward.style.height = "600px";
+
+    emailjs.send("service_eqflx1d", "template_smc934h", {
+      time: new Date(),
+      suggestion: inputText.value
+    }, "LyjyTLGN4DHGtdTq1")
+    
+    .then(response => {
+        console.log("Email sent successfully!", response);
+    })
+
+    .catch(error => {
+        console.error("Error sending email:", error);
+    });
   } else {
     reward.style.height = "0px";
   }
