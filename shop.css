@@ -68,6 +68,20 @@ div.item .desc {
   color: black;
 }
 
+.containerBtn {
+  display: block;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 60px;
+}
+
+.containerBtn:hover {
+  color: white;
+  display: block;
+  animation: vibrate 0.2s;
+  animation-iteration-count: infinite;
+}
+
 .quantity {
   position: absolute;
   display: flex;
@@ -138,4 +152,38 @@ div.item .desc {
 #checkoutBtn:hover {
   background-color: rgb(235, 235, 235);
   color: black;
+}
+
+#emailContainer {
+  position: fixed;
+  background-color: rgb(17, 17, 17);
+  justify-items: center;
+  width: 500px;
+  height: 500px;
+  right: 0;
+  bottom: -500px;
+  z-index: 5;
+  transition: 0.3s;
+}
+
+#emailContainer * {
+  margin: 10px 0;
+}
+
+#confirmBtn {
+  margin-top: 30px;
+  color: white;
+  background-color: rgb(17, 17, 17);
+  border: 3px solid white;
+}
+
+#confirmBtn:hover {
+  background-color: rgb(235, 235, 235);
+  color: black;
+}
+
+#invalidEmail {
+  color: red;
+  font-size: 50px;
+  opacity: 0;
 }
