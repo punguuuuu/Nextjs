@@ -79,6 +79,14 @@ a:hover {
   transition: left 0.5s;
 }
 
+.menu .changeEmail {
+  position: absolute;
+  left: 20%;
+  bottom: 60px;
+  color: white;
+  font-size: 40px;
+}
+
 .menu li {
   width: 100%;
   font-size: larger;
