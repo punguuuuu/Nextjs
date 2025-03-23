@@ -6,6 +6,23 @@ function changePage(page) {
   }
 }
 
+let menu = document.getElementById("menu");
+let main = document.getElementById("main");
+
+function showMenu(show) {
+  if (show) {
+    menu.style.left = "0px";
+    main.style.marginLeft = "300px";
+  } else {
+    menu.style.left = "-300px";
+    main.style.marginLeft = "0";
+  }
+
+  setTimeout(() => {
+    window.scrollTo(0, window.scrollY);
+  }, 0);
+}
+
 let gifPlaying = false;
 function playGif() {
   if (gifPlaying) {
@@ -35,18 +52,24 @@ function submitText() {
   if (inputText.value.trim() !== "") {
     reward.style.height = "600px";
 
-    emailjs.send("service_eqflx1d", "template_smc934h", {
-      time: new Date(),
-      suggestion: inputText.value
-    }, "LyjyTLGN4DHGtdTq1")
-    
-    .then(response => {
-        console.log("Email sent successfully!", response);
-    })
+    emailjs
+      .send(
+        "service_eqflx1d",
+        "template_smc934h",
+        {
+          time: new Date(),
+          suggestion: inputText.value,
+        },
+        "LyjyTLGN4DHGtdTq1"
+      )
 
-    .catch(error => {
+      .then((response) => {
+        console.log("Email sent successfully!", response);
+      })
+
+      .catch((error) => {
         console.error("Error sending email:", error);
-    });
+      });
   } else {
     reward.style.height = "0px";
   }
@@ -152,21 +175,4 @@ window.onscroll = function () {
 function toTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-}
-
-let menu = document.getElementById("menu");
-let main = document.getElementById("main");
-
-function showMenu(show) {
-  if (show) {
-    menu.style.width = "300px";
-    main.style.marginLeft = "300px";
-  } else {
-    menu.style.width = "0";
-    main.style.marginLeft = "0";
-  }
-
-  setTimeout(() => {
-    window.scrollTo(0, window.scrollY);
-  }, 0);
 }

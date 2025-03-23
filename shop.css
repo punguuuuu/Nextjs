@@ -68,20 +68,6 @@ div.item .desc {
   color: black;
 }
 
-.containerBtn {
-  display: block;
-  color: white;
-  margin-bottom: 30px;
-  font-size: 60px;
-}
-
-.containerBtn:hover {
-  color: white;
-  display: block;
-  animation: vibrate 0.2s;
-  animation-iteration-count: infinite;
-}
-
 .quantity {
   position: absolute;
   display: flex;
@@ -144,34 +130,12 @@ div.item .desc {
 }
 
 #cartInfo {
-  height: 67vh;
+  height: 65vh;
   overflow-y: auto;
   direction: rtl;
 }
 
 #checkoutBtn:hover {
-  background-color: rgb(235, 235, 235);
-  color: black;
-}
-
-#emailContainer {
-  position: absolute;
-  background-color: rgb(17, 17, 17);
-  justify-items: center;
-  width: 100%;
-  height: 450px;
-  bottom: -450px;
-  transition: 0.3s;
-}
-
-#confirmBtn {
-  margin-top: 30px;
-  color: white;
-  background-color: rgb(17, 17, 17);
-  border: 3px solid white;
-}
-
-#confirmBtn:hover {
   background-color: rgb(235, 235, 235);
   color: black;
 }

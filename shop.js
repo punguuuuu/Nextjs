@@ -11,10 +11,10 @@ let main = document.getElementById("main");
 
 function showMenu(show) {
   if (show) {
-    menu.style.width = "300px";
+    menu.style.left = "0px";
     main.style.marginLeft = "300px";
   } else {
-    menu.style.width = "0";
+    menu.style.left = "-300px";
     main.style.marginLeft = "0";
   }
 
@@ -110,44 +110,94 @@ function showCart(show) {
   }
 }
 
+function showEmailContainer(show) {
+  let emailContainer = document.getElementById("emailContainer");
+  show
+    ? (emailContainer.style.bottom = "0")
+    : (emailContainer.style.bottom = "-500px");
+}
+
 window.orderPlaced = false;
+let email = sessionStorage.getItem("email");
+let emailInput = document.querySelector(".lineEdit");
+let invalid = document.getElementById("invalidEmail");
+
+emailInput.value = email;
+
 function checkout() {
-  if(window.cartItems.length == 0){
+  if (window.cartItems.length == 0) {
     document.getElementById("warning").style.opacity = 1;
     window.orderPlaced = false;
     window.dispatchEvent(new Event("update"));
     return;
   }
-  document.getElementById("emailContainer").style.bottom = 0;
-  document.getElementById("warning").style.opacity = 0;
 
-  // const date = new Date();
-  // const orderItems = window.cartItems.map(item => `
-  //   <tr style="vertical-align: top; height: 61px;">
-  //     <td style="padding: 24px 8px 0 4px; display: inline-block; width: max-content;"><img style="height: 64px;" src="{{image_url}}" alt="item" height="64px"></td>
-  //     <td style="padding: 24px 8px 0 8px; width: 100%;">
-  //       <div>${item.desc}</div>
-  //       <div style="font-size: 14px; color: #888; padding-top: 4px;">&nbsp;</div>
-  //     </td>
-  //     <td style="padding: 24px 4px 0 0; white-space: nowrap;"><strong>0.00</strong></td>
-  //   </tr>
-  // `).join("");
+  if (validateEmail()) {
+    document.getElementById("warning").style.opacity = 0;
 
-  // emailjs.send("service_eqflx1d", "template_u9siuy8", {
-  //   email: "vinegarpotatosour@gmail.com",
-  //   orderItems: orderItems,
-  //   time: date.toLocaleString(),
-  // }, "LyjyTLGN4DHGtdTq1")
-  
-  // .then(response => {
-  //     console.log("Email sent successfully!", response);
-  // })
-  
-  // .catch(error => {
-  //     console.error("Error sending email:", error);
-  // });
+    createEmail();
 
-  window.cartItems.length = 0;
-  window.orderPlaced = true;
-  window.dispatchEvent(new Event("update"));
+    window.cartItems.length = 0;
+    window.orderPlaced = true;
+    window.dispatchEvent(new Event("update"));
+  } else {
+    showEmailContainer(true);
+  }
+}
+
+function checkEmail() {
+  if (validateEmail()) {
+    invalid.style.opacity = 0;
+    showEmailContainer(false);
+    sessionStorage.setItem("email", emailInput.value);
+  } else {
+    invalid.style.opacity = 1;
+  }
+}
+
+function validateEmail() {
+  return (
+    emailInput.value.trim() !== "" &&
+    emailInput.value.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+  );
+}
+
+function createEmail() {
+  const date = new Date();
+  const orderItems = window.cartItems
+    .map(
+      (item) => `
+      <tr style="vertical-align: top; height: 61px;">
+        <td style="padding: 24px 8px 0 4px; display: inline-block; width: max-content;"><img style="height: 64px;" src="{{image_url}}" alt="item" height="64px"></td>
+        <td style="padding: 24px 8px 0 8px; width: 100%;">
+          <div>${item.desc}</div>
+          <div style="font-size: 14px; color: #888; padding-top: 4px;">&nbsp;</div>
+        </td>
+        <td style="padding: 24px 4px 0 0; white-space: nowrap;"><strong>0.00</strong></td>
+      </tr>
+    `
+    )
+    .join("");
+
+  emailjs
+    .send(
+      "service_eqflx1d",
+      "template_u9siuy8",
+      {
+        email: emailInput.value,
+        orderItems: orderItems,
+        time: date.toLocaleString(),
+      },
+      "LyjyTLGN4DHGtdTq1"
+    )
+
+    .then((response) => {
+      console.log("Email sent successfully!", response);
+    })
+
+    .catch((error) => {
+      console.error("Error sending email:", error);
+    });
 }

@@ -30,9 +30,14 @@
       </li>
       <li><a href="#index" onclick="changePage('index.html')">Home</a></li>
       <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
+      <li>
+        <a href="#email" class="changeEmail" onclick="showEmailContainer(true)"
+          >Change Email</a
+        >
+      </li>
     </ul>
 
-    <div id="main" class="main">
+    <main id="main" class="main">
       <button id="menuBtn" onclick="showMenu(true)">Menu</button>
       <button id="cartBtn" onclick="showCart(true)">Cart</button>
 
@@ -158,7 +163,25 @@
           <img src="./images/food/ice cream.png" alt="Ice cream" />
         </div>
       </div>
-    </div>
+
+      <div id="emailContainer">
+        <a
+          href="#close"
+          class="containerBtn"
+          style="margin: 40px 0"
+          onclick="showEmailContainer(false)"
+          >X</a
+        >
+        <p style="width: 60%; color: white">Please provide us your email</p>
+        <input
+          type="text"
+          class="lineEdit"
+          style="width: 80%; font-size: 40px"
+        />
+        <button id="confirmBtn" onclick="checkEmail()">Confirm</button>
+        <p id="invalidEmail">Invalid email !</p>
+      </div>
+    </main>
 
     <div id="detail">
       <a href="#close" class="containerBtn" onclick="showDetail(false)">X</a>
@@ -170,24 +193,21 @@
         <a class="quantityBtn" onclick="changeQuantity(true)">+</a>
       </div> -->
       <img class="loading" src="loading.gif" />
-      <button id="addBtn" class="customBtn" onclick="addToCart()">Add to cart</button>
-      <p id="message" class="message" style="color: rgb(82, 177, 82)">Added to cart !</p>
+      <button id="addBtn" class="customBtn" onclick="addToCart()">
+        Add to cart
+      </button>
+      <p id="message" class="message" style="color: rgb(82, 177, 82)">
+        Added to cart !
+      </p>
     </div>
 
     <div id="cart">
       <a href="#close" class="containerBtn" onclick="showCart(false)">X</a>
       <div id="cartInfo"></div>
-      <button id="checkoutBtn" class="customBtn" onclick="checkout()">Checkout</button>
+      <button id="checkoutBtn" class="customBtn" onclick="checkout()">
+        Checkout
+      </button>
       <p id="warning" class="message" style="color: red">Cart is empty !</p>
-
-      <!-- <div id="emailModal">
-        <a href="#close" class="containerBtn" onclick="">X</a> -->
-        <div id="emailContainer">
-          <p style="width: 60%;color: white;">Please provide us your email</p>
-          <input type="text" class="lineEdit" style="width: 80%;"/>
-          <button id="confirmBtn">Confirm</button>
-        </div>
-      <!-- </div> -->
     </div>
   </body>
 </html>
