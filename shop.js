@@ -174,7 +174,9 @@ function createEmail() {
     .map(
       (item) => `
       <tr style="vertical-align: top; height: 61px;">
-        <td style="padding: 24px 8px 0 4px; display: inline-block; width: max-content;"><img style="height: 64px;" src="{{image_url}}" alt="item" height="64px"></td>
+        <td style="padding: 24px 8px 0 4px; display: inline-block; width: max-content;">
+          <img style="height: 100px;" src=${item.src} alt="item" height="100px">
+        </td>
         <td style="padding: 24px 8px 0 8px; width: 100%;">
           <div>${item.desc}</div>
           <div style="font-size: 14px; color: #888; padding-top: 4px;">&nbsp;</div>
