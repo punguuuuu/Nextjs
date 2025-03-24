@@ -110,11 +110,15 @@ function showCart(show) {
   }
 }
 
+
 function showEmailContainer(show) {
+  let modal = document.getElementById("emailModal");
   let emailContainer = document.getElementById("emailContainer");
-  show
-    ? (emailContainer.style.bottom = "0")
-    : (emailContainer.style.bottom = "-500px");
+  if(show){
+    modal.style.display = "block"
+  } else {
+    modal.style.display = "none"
+  }
 }
 
 window.orderPlaced = false;

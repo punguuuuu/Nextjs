@@ -163,24 +163,6 @@
           <img src="./images/food/ice cream.png" alt="Ice cream" />
         </div>
       </div>
-
-      <div id="emailContainer">
-        <a
-          href="#close"
-          class="containerBtn"
-          style="margin: 40px 0"
-          onclick="showEmailContainer(false)"
-          >X</a
-        >
-        <p style="width: 60%; color: white">Please provide us your email</p>
-        <input
-          type="text"
-          class="lineEdit"
-          style="width: 80%; font-size: 40px"
-        />
-        <button id="confirmBtn" onclick="checkEmail()">Confirm</button>
-        <p id="invalidEmail">Invalid email !</p>
-      </div>
     </main>
 
     <div id="detail">
@@ -208,6 +190,26 @@
         Checkout
       </button>
       <p id="warning" class="message" style="color: red">Cart is empty !</p>
+    </div>
+
+    <div id="emailModal">
+      <div id="emailContainer">
+        <a
+          href="#close"
+          class="containerBtn"
+          style="margin-bottom: 40px"
+          onclick="showEmailContainer(false)"
+          >X</a
+        >
+        <p style="width: 60%; color: white">Please provide us your email</p>
+        <input
+          type="text"
+          class="lineEdit"
+          style="width: 80%; font-size: 40px"
+        />
+        <button id="confirmBtn" onclick="checkEmail()">Confirm</button>
+        <p id="invalidEmail">Invalid email !</p>
+      </div>
     </div>
   </body>
 </html>
