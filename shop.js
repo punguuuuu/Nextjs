@@ -23,27 +23,6 @@ function showMenu(show) {
   }, 0);
 }
 
-let items = document.getElementsByClassName("item");
-let itemImg = document.getElementById("image");
-let itemCaption = document.getElementById("caption");
-for (let count = 0; count < items.length; count++) {
-  let item = items[count];
-  let desc = document.createElement("p");
-  desc.classList.add("desc");
-
-  let image = item.querySelector("img");
-  desc.innerHTML = image.alt;
-  item.appendChild(desc);
-
-  item.onclick = function () {
-    showDetail(true);
-    itemImg.src = image.src;
-    itemCaption.innerHTML = image.alt;
-    // window.cartDesc = image.alt;
-    // window.cartImgSrc = image.src;
-  };
-}
-
 let detail = document.getElementById("detail");
 let addBtn = document.getElementById("addBtn");
 let message = document.getElementById("message");
@@ -77,6 +56,8 @@ function changeQuantity(increment) {
   quantity.innerHTML = value;
 }
 
+let itemImg = document.getElementById("image");
+let itemCaption = document.getElementById("caption");
 window.cartItems = window.cartItems || [];
 function addToCart() {
   let addBtn = document.getElementById("addBtn");

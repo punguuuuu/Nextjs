@@ -22,6 +22,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/prop-types@latest/prop-types.js"></script>
     <script type="text/babel" src="cart.js"></script>
+    <script type="text/babel" src="items.js"></script>
   </head>
   <body>
     <ul id="menu" class="menu">
@@ -45,123 +46,13 @@
       <p>Buy freshly made food here !</p>
 
       <h2 style="font-size: 100px">Bread</h2>
-      <div class="items-container">
-        <div class="item">
-          <img src="https://i.postimg.cc/28j86QMc/bread.png" alt="Bread" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/MGfGwzNz/butter-toast.png" alt="Butter on toast" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/vBWH13Gj/avocado-toast.png" alt="Avocado toast" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/hPGcgSQN/cheese-on-bread.png" alt="Cheese on bread" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/9f564Vzm/egg-on-bread.png" alt="Egg on bread" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/59gbZHyw/polo-bun.png" alt="Polo bun" />
-        </div>
-      </div>
+      <div id="bread-items"></div>
 
       <h2 style="font-size: 100px; padding-top: 150px">Snacks</h2>
-      <div class="items-container">
-        <div class="item">
-          <img src="https://i.postimg.cc/qq4B2yR7/lemon.png" alt="Lemon" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/3wXPm6Dg/chili.png" alt="Chili" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/s2W38wGX/durian.png" alt="Durian" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/2SZp83k9/egg.png" alt="Sunny side up" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/NGkjBJJ2/pizza.png" alt="Pizza slice" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/NFMShjC4/sushi.png" alt="Sushi" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/zB5YQ51t/pretzel.png" alt="Pretzel" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/W3PsPg07/nasi-lemak.png" alt="Nasi Lemak" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/9M3QFvHZ/tomato.png" alt="Tomato" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/TPnXQ1B5/nacho-chips.png" alt="Nachos" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/1XBmBXnr/wasabi.png" alt="Sushi with wasabi" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/y8bN2Dff/taco.png" alt="Taco" />
-        </div>
-        <div class="item">
-          <img
-            src="https://i.postimg.cc/kGg3ncGW/pasta-meatballs.png"
-            alt="Pasta with meatballs"
-          />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/1329JLt2/fried-pizza.png" alt="Fried pizza" />
-        </div>
-      </div>
+      <div id="snack-items"></div>
 
       <h2 style="font-size: 100px; padding-top: 150px">Dessert</h2>
-      <div class="items-container">
-        <div class="item">
-          <img src="https://i.postimg.cc/0jVvm4Ft/ginger.png" alt="Gingerbreadman" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/fTHW03hw/pancake.png" alt="Fluffy pancake" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/gJ4QBZsj/fruit-cake.png" alt="Fruit cake" />
-        </div>
-        <div class="item">
-          <img
-            src="https://i.postimg.cc/CMcpcWr7/swissroll-matcha.png"
-            alt="Matcha swissroll"
-          />
-        </div>
-        <div class="item">
-          <img
-            src="https://i.postimg.cc/rmCMysJ2/swissroll-strawberry.png"
-            alt="Strawberry swissroll"
-          />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/8zJGJtHH/swissroll.png" alt="Chocolate swissroll" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/cHmGyjxs/puff.png" alt="Cream puff" />
-        </div>
-        <div class="item">
-          <img
-            src="https://i.postimg.cc/zGsrnK21/mango-shaved-ice.png"
-            alt="Mango shaved ice"
-          />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/QxPG3c3W/candy-cane.png" alt="Candy cane" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/Y0rkv7nG/cream-cone.png" alt="Cream cone" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/7htvb2Jd/crepe.png" alt="Crepe" />
-        </div>
-        <div class="item">
-          <img src="https://i.postimg.cc/63BF00dF/ice-cream.png" alt="Ice cream" />
-        </div>
+      <div id="desert-items">
       </div>
     </main>
 
