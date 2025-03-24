@@ -164,7 +164,7 @@ a:hover {
 
 .gallery {
   display: flex;
-  width: 90%;
+  width: 85%;
   gap: 10px;
   justify-content: flex-start;
   overflow-x: auto;

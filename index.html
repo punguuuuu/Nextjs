@@ -9,6 +9,18 @@
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js" defer></script>
+
+    <script
+    src="https://unpkg.com/react@17/umd/react.development.js"
+    crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@latest/prop-types.js"></script>
+    <script type="text/babel" src="gallery.js"></script>
   </head>
 
   <body>
@@ -31,7 +43,6 @@
       </h1>
 
       <div style="position: relative">
-        <p class="secret" style="left: 86%; top: 12%">???</p>
         <div class="tooltip">
           <span class="tooltiptext" style="margin-left: 270px"
             >Spin me !!!</span
@@ -58,82 +69,33 @@
       />
 
       <h2 id="food">Food</h2>
-      <div class="gallery-container">
-        <div class="gallery">
-          <img src="./images/food/ginger.png" alt="Gingerbreadman" />
-          <img src="./images/food/lemon.png" alt="Lemon" />
-          <img src="./images/food/bread.png" alt="Bread" />
-          <img src="./images/food/durian.png" alt="Durian" />
-          <img src="./images/food/egg.png" alt="Sunny side up" />
-          <img src="./images/food/pancake.png" alt="Fluffy pancake" />
-          <img src="./images/food/pizza.png" alt="Pizza slice" />
-          <img src="./images/food/sushi.png" alt="Sushi" />
-          <img src="./images/food/pretzel.png" alt="Pretzel" />
-          <img src="./images/food/tomato.png" alt="Tomato" />
-          <img src="./images/food/ketchup.png" alt="Ketchup" />
-        </div>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
-      </div>
+      <div id="food-gallery"></div>
       <p style="padding: 30px">I like drawing faces on food</p>
 
       <img
         src="./images/section/cat.png"
         alt="divider"
         style="width: 100%; margin-top: 100px"
-        class="no-model"
       />
 
       <h2 id="cats">Cats</h2>
-      <div class="gallery-container">
-        <div class="gallery">
-          <img src="./images/cat/roomba.png" alt="Roomba" />
-          <img src="./images/cat/moai.png" alt="Moai" />
-          <img src="./images/cat/potat.png" alt="Cat in potato bag" />
-          <img src="./images/cat/catpuccino.png" alt="Catpuccino" />
-          <img src="./images/cat/pool.png" alt="Cat in pool" />
-          <img src="./images/cat/harshbrown.png" alt="Harshbrown" />
-        </div>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
-      </div>
+      <div id="cat-gallery"></div>
       <p style="padding: 30px">Cats in random places</p>
 
       <img
         src="./images/section/random.png"
         alt="divider"
         style="width: 98%; margin-top: 100px"
-        class="no-model"
       />
 
       <h2 id="random">Random Stuff</h2>
-      <div class="gallery-container">
-        <div class="gallery">
-          <img src="./images/random/share food.png" alt="Share your food" />
-          <img src="./images/random/debt.png" alt="Generational debt" />
-          <img src="./images/random/cactus.png" alt="Cactus" />
-          <img src="./images/random/sea urchin.png" alt="Sea urchin" />
-          <img src="./images/random/toothpaste.png" alt="Toothpaste" />
-          <img src="./images/random/i know.png" alt="I know" />
-          <img src="./images/random/not listening.png" alt="Not listening" />
-          <img src="./images/random/lock in.png" alt="Lock in" />
-          <img src="./images/random/posture.png" alt="Posture reveal" />
-          <img src="./images/random/i dont.png" alt="I dont get it" />
-          <img
-            src="./images/random/i miss my brain.png"
-            alt="I miss my brain"
-          />
-        </div>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
-      </div>
+      <div id="random-gallery"></div>
       <p style="padding: 30px">Random stuff with random captions</p>
 
       <img
         src="./images/section/jeans.png"
         alt="divider"
         style="width: 100%; margin-top: 100px"
-        class="no-model"
       />
 
       <h2 id="suggestion" style="margin-top: 150px">Suggestions</h2>
