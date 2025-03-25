@@ -44,7 +44,6 @@ class Gallery extends React.Component {
         );
     };
     
-
     closeModal = () => {
         this.setState({ isModalOpen: false });
     };
@@ -78,7 +77,6 @@ class Gallery extends React.Component {
         );
     }
 }
-
 
 const foodGallery = [
     {src:"./images/food/ginger.png", alt:"Gingerbreadman"},

@@ -75,11 +75,6 @@ function submitText() {
   }
 }
 
-let span = document.getElementsByClassName("close")[0];
-span.onclick = function () {
-  modal.style.display = "none";
-};
-
 let toTopBtn = document.getElementById("toTopBtn");
 window.onscroll = function () {
   if (
