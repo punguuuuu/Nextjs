@@ -24,6 +24,7 @@
     <script type="text/babel" src="cart.js"></script>
     <script type="text/babel" src="items.js"></script>
   </head>
+
   <body>
     <ul id="menu" class="menu">
       <li>
@@ -31,6 +32,7 @@
       </li>
       <li><a href="#index" onclick="changePage('index.html')">Home</a></li>
       <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
+      <li><a href="#gallery" onclick="changePage('gallery.html')">Gallery</a></li>
       <li>
         <a href="#email" class="changeEmail" onclick="showEmailContainer(true)"
           >Change Email</a
@@ -39,8 +41,9 @@
     </ul>
 
     <main id="main" class="main">
-      <button id="menuBtn" onclick="showMenu(true)">Menu</button>
+      <button id="menuBtn" onclick="toggleMenu(true)">Menu</button>
       <button id="cartBtn" onclick="showCart(true)">Cart</button>
+      <button id="toTopBtn" onclick="toTop()">Back to top</button>
 
       <h1 style="font-weight: normal; margin-bottom: -50px">Shop</h1>
       <p>Buy freshly made food here !</p>

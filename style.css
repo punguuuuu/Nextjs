@@ -157,6 +157,15 @@ a:hover {
   visibility: visible;
 }
 
+#category {
+  display: flex;
+  justify-content: center;
+}
+
+#category a {
+  width:25%
+}
+
 .gallery-container {
   position: relative;
   justify-items: center;
@@ -169,6 +178,7 @@ a:hover {
   justify-content: flex-start;
   overflow-x: auto;
   scrollbar-width: none;
+  padding-top: 50px;
 }
 
 .gallery img {
@@ -180,6 +190,10 @@ a:hover {
 .gallery img:hover {
   cursor: pointer;
   border: 2px solid rgb(219, 217, 217);
+}
+
+.fade-in {
+  animation: fade 0.5s;
 }
 
 .modal {
@@ -294,9 +308,10 @@ button:hover {
 #toTopBtn {
   width: 0px;
   z-index: 2;
-  position: fixed;
-  top: 40px;
-  right: 50px;
+  position: sticky;
+  top: 120px;
+  left: 100%;
+  margin-right: 55px;
   border: none;
   overflow: hidden;
   white-space: nowrap;

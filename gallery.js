@@ -3,7 +3,7 @@ class Gallery extends React.Component {
         super(props);
         this.galleryRef = React.createRef();
         this.state = { modalImage: "", modalCaption: "", isModalOpen: false, canScrollLeft: false,
-            canScrollRight: false };
+            canScrollRight: false, fade: false };
     }
 
     updateBtn = () => {
@@ -26,6 +26,16 @@ class Gallery extends React.Component {
 
     componentDidMount(){
         setTimeout(this.updateBtn, 600);
+    }
+    
+    componentDidUpdate(prevProps) {
+        if (prevProps.images !== this.props.images) {
+            this.galleryRef.current.scrollLeft = 0;
+            this.updateBtn();
+            this.setState({ fade: false }, () => {
+                setTimeout(() => this.setState({ fade: true }), 10);
+            });
+        }
     }
 
     openModal = (image) => {
@@ -50,7 +60,7 @@ class Gallery extends React.Component {
 
     render() {
         return (
-            <div className="gallery-container">
+            <div className={`gallery-container ${this.state.fade ? "fade-in" : ""}`}>
                 <div className="gallery" ref={this.galleryRef}>
                     {this.props.images.map((image, index) => (
                         <img 
@@ -78,58 +88,92 @@ class Gallery extends React.Component {
     }
 }
 
-const foodGallery = [
-    {src:"./images/food/ginger.png", alt:"Gingerbreadman"},
-    {src:"./images/food/lemon.png", alt:"Lemon"},
-    {src:"./images/food/egg.png", alt:"Sunny side up"},
-    {src:"./images/food/pancake.png", alt:"Fluffy pancake"},
-    {src:"./images/food/pizza.png", alt:"Pizza slice"},
-    {src:"./images/food/sushi.png", alt:"Sushi"},
-    {src:"./images/food/pretzel.png", alt:"Pretzel"},
-    {src:"./images/food/tomato.png", alt:"Tomato"},
-    {src:"./images/food/ketchup.png", alt:"Ketchup"},
-];
+class Category extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentGallery: foodGallery.images,
+            currentDesc: foodGallery.desc,
+            fade: false,
+        };
+    }
+
+    switchGallery = (newGallery) => {
+        if(this.state.currentDesc === newGallery.desc){
+            return;
+        }
+
+        this.setState({ 
+            currentGallery: newGallery.images, 
+            currentDesc: newGallery.desc,
+            fade: false,
+        }, () => {setTimeout(()=>(this.setState({fade: true})),10)});
+    };
+    
+    render(){
+        return (
+            <div>
+                <div id="category">
+                    <a onClick={() => this.switchGallery(foodGallery)}>Food</a>
+                    <a onClick={() => this.switchGallery(catGallery)}>Cats</a>
+                    <a onClick={() => this.switchGallery(randomGallery)}>Random stuff</a>
+                </div>
+                
+                <Gallery images={this.state.currentGallery} />
+                
+                <p style={{ marginTop: "40px"}} className={`${this.state.fade ? "fade-in" : ""}`}>{this.state.currentDesc}</p>
+            </div>
+        );
+    }
+}
+
+const foodGallery = {
+    desc: "I like drawing faces on food",
+    images: [
+        {src:"./images/food/ginger.png", alt:"Gingerbreadman"},
+        {src:"./images/food/lemon.png", alt:"Lemon"},
+        {src:"./images/food/egg.png", alt:"Sunny side up"},
+        {src:"./images/food/pancake.png", alt:"Fluffy pancake"},
+        {src:"./images/food/pizza.png", alt:"Pizza slice"},
+        {src:"./images/food/sushi.png", alt:"Sushi"},
+        {src:"./images/food/pretzel.png", alt:"Pretzel"},
+        {src:"./images/food/tomato.png", alt:"Tomato"},
+        {src:"./images/food/ketchup.png", alt:"Ketchup"},
+    ]
+};
+
+const catGallery = {
+    desc: "Cats in random places",
+    images: [
+        {src:"./images/cat/roomba.png", alt:"Roomba"},
+        {src:"./images/cat/moai.png", alt:"Moai"},
+        {src:"./images/cat/potat.png", alt:"Cat in potato bag"},
+        {src:"./images/cat/catpuccino.png", alt:"Catpuccino"},
+        {src:"./images/cat/pool.png", alt:"Cat in pool"},
+        {src:"./images/cat/harshbrown.png", alt:"Harshbrown"},
+    ]
+};
+
+const randomGallery = {
+    desc: "Random stuff with random captions",
+    images: [
+        {src:"./images/random/share food.png", alt:"Share your food"},
+        {src:"./images/random/debt.png", alt:"Generational debt"},
+        {src:"./images/random/cactus.png", alt:"Cactus"},
+        {src:"./images/random/sea urchin.png", alt:"Sea urchin"},
+        {src:"./images/random/toothpaste.png", alt:"Toothpaste"},
+        {src:"./images/random/i know.png", alt:"I know"},
+        {src:"./images/random/not listening.png", alt:"Not listening"},
+        {src:"./images/random/lock in.png", alt:"Lock in"},
+        {src:"./images/random/posture.png", alt:"Posture reveal"},
+        {src:"./images/random/i dont.png", alt:"I dont get it"},
+        {src:"./images/random/i miss my brain.png", alt:"I miss my brain"},
+    ]
+};
 
 ReactDOM.render(
     <React.StrictMode>
-        <Gallery images={foodGallery}/>
+        <Category />
     </React.StrictMode>,
-    document.getElementById("food-gallery")
-);
-
-const catGallery = [
-    {src:"./images/cat/roomba.png", alt:"Roomba"},
-    {src:"./images/cat/moai.png", alt:"Moai"},
-    {src:"./images/cat/potat.png", alt:"Cat in potato bag"},
-    {src:"./images/cat/catpuccino.png", alt:"Catpuccino"},
-    {src:"./images/cat/pool.png", alt:"Cat in pool"},
-    {src:"./images/cat/harshbrown.png", alt:"Harshbrown"},
-];
-
-ReactDOM.render(
-    <React.StrictMode>
-        <Gallery images={catGallery}/>
-    </React.StrictMode>,
-    document.getElementById("cat-gallery")
-);
-
-const randomGallery = [
-    {src:"./images/random/share food.png", alt:"Share your food"},
-    {src:"./images/random/debt.png", alt:"Generational debt"},
-    {src:"./images/random/cactus.png", alt:"Cactus"},
-    {src:"./images/random/sea urchin.png", alt:"Sea urchin"},
-    {src:"./images/random/toothpaste.png", alt:"Toothpaste"},
-    {src:"./images/random/i know.png", alt:"I know"},
-    {src:"./images/random/not listening.png", alt:"Not listening"},
-    {src:"./images/random/lock in.png", alt:"Lock in"},
-    {src:"./images/random/posture.png", alt:"Posture reveal"},
-    {src:"./images/random/i dont.png", alt:"I dont get it"},
-    {src:"./images/random/i miss my brain.png", alt:"I miss my brain"},
-];
-
-ReactDOM.render(
-    <React.StrictMode>
-        <Gallery images={randomGallery}/>
-    </React.StrictMode>,
-    document.getElementById("random-gallery")
+    document.getElementById("gallery")
 );

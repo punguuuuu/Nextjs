@@ -7,20 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js" defer></script>
-
-    <script
-    src="https://unpkg.com/react@17/umd/react.development.js"
-    crossorigin
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-      crossorigin
-    ></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/prop-types@latest/prop-types.js"></script>
-    <script type="text/babel" src="gallery.js"></script>
   </head>
 
   <body>
@@ -30,16 +17,18 @@
       </li>
       <li><a href="#home" onclick="changePage('index.html')">Home</a></li>
       <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
+      <li><a href="#gallery" onclick="changePage('gallery.html')">Gallery</a></li>
     </ul>
 
     <main id="main" class="main">
-      <button id="menuBtn" onclick="showMenu(true)">Menu</button>
-      <button id="toTopBtn" onclick="toTop()">Back to top</button>
+      <button id="menuBtn" onclick="toggleMenu()">Menu</button>
 
-      <h1 style="font-weight: normal; margin-top: 50px;">
+      <h1 style="font-weight: normal; margin-top: 30px;">
         Hi "; <br />
-        I draw <a href="#food">Food</a>, <a href="#cats">Cats</a>, and
-        <a href="#random">Random Stuff</a>
+        I draw 
+        <a href="#food" onclick="changePage('shop.html')">Food</a>, 
+        <a href="#cats" onclick="changePage('gallery.html')">Cats</a>, and
+        <a href="#random" onclick="changePage('gallery.html')">Random Stuff</a>
       </h1>
 
       <div style="position: relative">
@@ -59,67 +48,6 @@
             onclick="playGif()"
           />
         </div>
-      </div>
-
-      <img
-        src="./images/section/food.png"
-        alt="divider"
-        style="width: 98%; margin-top: 100px"
-        class="no-model"
-      />
-
-      <h2 id="food">Food</h2>
-      <div id="food-gallery"></div>
-      <p style="padding: 30px">I like drawing faces on food</p>
-
-      <img
-        src="./images/section/cat.png"
-        alt="divider"
-        style="width: 100%; margin-top: 100px"
-      />
-
-      <h2 id="cats">Cats</h2>
-      <div id="cat-gallery"></div>
-      <p style="padding: 30px">Cats in random places</p>
-
-      <img
-        src="./images/section/random.png"
-        alt="divider"
-        style="width: 98%; margin-top: 100px"
-      />
-
-      <h2 id="random">Random Stuff</h2>
-      <div id="random-gallery"></div>
-      <p style="padding: 30px">Random stuff with random captions</p>
-
-      <img
-        src="./images/section/jeans.png"
-        alt="divider"
-        style="width: 100%; margin-top: 100px"
-      />
-
-      <h2 id="suggestion" style="margin-top: 150px">Suggestions</h2>
-      <p style="margin-bottom: 10px">Suggest things for me to draw !</p>
-      <div class="input-container" id="input">
-        <input type="text" class="lineEdit" /><button onclick="submitText()">
-          Submit
-        </button>
-      </div>
-
-      <div id="rewardContainer" , style="display: block">
-        <p id="message"></p>
-        <div id="reward" , class="reward">
-          <img
-            src="./images/food/cake.png"
-            alt="reward"
-            style="margin-top: -100px"
-          />
-        </div>
-      </div>
-
-      <div style="position: relative; margin-top: 100px">
-        <img src="./images/cat/hi.png" alt="hi" style="cursor: pointer" />
-        <div class="caption">that's it, bye ";</div>
       </div>
     </main>
   </body>

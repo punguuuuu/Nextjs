@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <title>pungu</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="script.js" defer></script>
+
+    <script
+    src="https://unpkg.com/react@17/umd/react.development.js"
+    crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@latest/prop-types.js"></script>
+    <script type="text/babel" src="gallery.js"></script>
+  </head>
+
+  <body>
+    <ul id="menu" class="menu">
+      <li>
+        <a href="#close" class="menuClose" onclick="showMenu(false)">X</a>
+      </li>
+      <li><a href="#home" onclick="changePage('index.html')">Home</a></li>
+      <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
+      <li><a href="#gallery" onclick="changePage('gallery.html')">Gallery</a></li>
+    </ul>
+
+    <main id="main" class="main">
+      <button id="menuBtn" onclick="toggleMenu(true)">Menu</button>
+
+      <h1 style="font-weight: normal; margin-top: 20px;">Gallery</h1>
+
+      <div id="gallery"></div>
+
+      <img
+        src="./images/section/jeans.png"
+        alt="divider"
+        style="width: 100%; margin-top: 100px"
+      />
+
+      <h2 id="suggestion" style="margin-top: 150px">Suggestions</h2>
+      <p style="margin-bottom: 10px">Suggest things for me to draw !</p>
+      <div class="input-container" id="input">
+        <input type="text" class="lineEdit" /><button onclick="submitText()">
+          Submit
+        </button>
+      </div>
+
+      <div id="rewardContainer" , style="display: block">
+        <p id="message"></p>
+        <div id="reward" , class="reward">
+          <img
+            src="./images/food/cake.png"
+            alt="reward"
+            style="margin-top: -100px"
+          />
+        </div>
+      </div>
+
+      <div style="position: relative; margin-top: 100px">
+        <img src="./images/cat/hi.png" alt="hi"/>
+        <div class="caption">that's it, bye ";</div>
+      </div>
+    </main>
+  </body>
+</html>

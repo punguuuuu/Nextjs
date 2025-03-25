@@ -6,6 +6,23 @@ function changePage(page) {
   }
 }
 
+let toTopBtn = document.getElementById("toTopBtn");
+window.onscroll = function () {
+  if (
+    document.body.scrollTop > 1000 ||
+    document.documentElement.scrollTop > 1000
+  ) {
+    toTopBtn.style.width = "200px";
+  } else {
+    toTopBtn.style.width = "0px";
+  }
+};
+
+function toTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 let menu = document.getElementById("menu");
 let main = document.getElementById("main");
 
@@ -21,6 +38,10 @@ function showMenu(show) {
   setTimeout(() => {
     window.scrollTo(0, window.scrollY);
   }, 0);
+}
+
+function toggleMenu(){
+  menu.style.left == "0px" ? showMenu(false) : showMenu(true);
 }
 
 let detail = document.getElementById("detail");

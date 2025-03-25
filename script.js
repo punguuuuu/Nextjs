@@ -23,6 +23,10 @@ function showMenu(show) {
   }, 0);
 }
 
+function toggleMenu(){
+  menu.style.left == "0px" ? showMenu(false) : showMenu(true);
+}
+
 let gifPlaying = false;
 function playGif() {
   if (gifPlaying) {
@@ -36,7 +40,7 @@ function playGif() {
   setTimeout(function () {
     img.src = "spin0.png";
     gifPlaying = false;
-  }, 2000);
+  }, 2100);
 }
 
 function submitText() {
@@ -73,21 +77,4 @@ function submitText() {
   } else {
     reward.style.height = "0px";
   }
-}
-
-let toTopBtn = document.getElementById("toTopBtn");
-window.onscroll = function () {
-  if (
-    document.body.scrollTop > 1000 ||
-    document.documentElement.scrollTop > 1000
-  ) {
-    toTopBtn.style.width = "200px";
-  } else {
-    toTopBtn.style.width = "0px";
-  }
-};
-
-function toTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
 }
