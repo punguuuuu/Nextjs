@@ -28,6 +28,8 @@ body {
   font-family: custom, sans-serif;
   font-size: 60px;
   text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #main {
@@ -74,6 +76,7 @@ a:hover {
   margin: 0px;
   padding-top: 50px;
   padding-left: 0;
+  font-size: larger;
   overflow: hidden;
   z-index: 5;
   transition: left 0.5s;
@@ -89,7 +92,6 @@ a:hover {
 
 .menu li {
   width: 100%;
-  font-size: larger;
   float: left;
 }
 
@@ -147,8 +149,10 @@ a:hover {
 .tooltip .tooltiptext {
   visibility: hidden;
   position: absolute;
+  font-size: 70px;
   z-index: 1;
-  width: 200px;
+  padding-left: 15px;
+  width: 100%;
   color: black;
   text-align: center;
 }
@@ -377,5 +381,42 @@ button:hover {
   to {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 800px){
+  h1 {
+    font-size: 70px;
+  }
+
+  .tooltip .tooltiptext {
+    font-size: 50px;
+  }
+
+  #menuBtn {
+    font-size: 40px;
+    top: 20px;
+    margin-left: -40px;
+  }
+
+  .menu {
+    width: 200px;
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  h1 {
+    font-size: 100px;
+    margin:30px 150px;
+  }
+
+  .tooltip .tooltiptext {
+    font-size: 60px;
+  }
+
+  .menu {
+    width: 250px;
+    font-size: 60px;
   }
 }

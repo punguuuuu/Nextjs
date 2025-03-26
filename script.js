@@ -12,7 +12,9 @@ let main = document.getElementById("main");
 function showMenu(show) {
   if (show) {
     menu.style.left = "0px";
-    main.style.marginLeft = "300px";
+    if(window.innerWidth >= 800){
+      main.style.marginLeft = "300px";
+    }
   } else {
     menu.style.left = "-300px";
     main.style.marginLeft = "0";
