@@ -16,11 +16,7 @@ function showMenu(show) {
       main.style.marginLeft = "300px";
     }
   } else {
-    if(window.innerWidth >= 800){
-      menu.style.left = "-300px";
-    } else {
-      menu.style.left = "-800px";
-    }
+    menu.style.left = "-800px";
     main.style.marginLeft = "0";
   }
 

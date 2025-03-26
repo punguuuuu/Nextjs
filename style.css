@@ -62,6 +62,11 @@ a:hover {
   cursor: pointer;
 }
 
+#gif {
+  width: 90%;
+  cursor: pointer;
+}
+
 .reward {
   height: 0;
   overflow: hidden;
@@ -72,7 +77,7 @@ a:hover {
   position: fixed;
   height: 100%;
   width: 300px;
-  left: -300px;
+  left: -800px;
   top: 0;
   list-style: none;
   background-color: black;
@@ -82,7 +87,7 @@ a:hover {
   font-size: larger;
   overflow: hidden;
   z-index: 5;
-  transition: left 0.5s;
+  transition: left 0.5s ease;
 }
 
 .menu .changeEmail {
@@ -418,8 +423,7 @@ button:hover {
   .menu {
     width: 100%;
     font-size: 50px;
-    left: -800px;
-    transition: left  1s;
+    transition: left 1s;
   }
 }
 
@@ -443,5 +447,13 @@ button:hover {
     font-size: 40px;
     top: 20px;
     margin-left: -40px;
+  }
+
+  .tooltip .tooltiptext {
+    margin-left: 10px;
+  }
+
+  #gif {
+    width: 100%;
   }
 }
