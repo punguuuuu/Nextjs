@@ -8,8 +8,10 @@ class ShopItems extends React.Component {
         document.getElementById("image").src = items.src;
         document.getElementById("caption").innerHTML = items.alt;
         document.getElementById("message").style.opacity = 0;
-        if(window.innerWidth >= 1000){
+        if(window.innerWidth >= 800 && window.innerWidth <= 1000){
             document.getElementById("cart").style.right = "-800px";
+            document.getElementById("main").style.marginRight = "350px";
+        } else if (window.innerWidth >= 800) {
             document.getElementById("main").style.marginRight = "500px";
         }
     }

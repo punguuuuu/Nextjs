@@ -14,7 +14,7 @@ window.onscroll = function () {
   ) {
     toTopBtn.style.width = "200px";
   } else {
-    toTopBtn.style.width = "0px";
+    toTopBtn.style.width = 0;
   }
 };
 
@@ -28,13 +28,13 @@ let main = document.getElementById("main");
 
 function showMenu(show) {
   if (show) {
-    menu.style.left = "0px";
+    menu.style.left = 0;
     if(window.innerWidth >= 800){
       main.style.marginLeft = "300px";
     }
   } else {
     menu.style.left = "-800px";
-    main.style.marginLeft = "0";
+    main.style.marginLeft = 0;
   }
 
   setTimeout(() => {
@@ -55,20 +55,22 @@ let message = document.getElementById("message");
 function showDetail(show) {
   if (show) {
     showCart(false);
-    detail.style.right = "0";
+    detail.style.right = 0;
     message.style.opacity = 0;
-    if(window.innerWidth >= 1000){
+    if(window.innerWidth >= 800 && window.innerWidth <= 1000){
+      main.style.marginRight = "350px";
+    } else if(window.innerWidth >= 800){
       main.style.marginRight = "500px";
     }
     // quantity.innerHTML = 1;
     // value = 1;
   } else {
-    if(window.innerWidth >= 1000){
+    if(window.innerWidth >= 800){
       detail.style.right = "-500px";
     } else {
       detail.style.right = "-800px";
     }
-    main.style.marginRight = "0";
+    main.style.marginRight = 0;
   }
 
   setTimeout(() => {
@@ -108,17 +110,21 @@ function addToCart() {
   }, 1700);
 }
 
+let warning = document.getElementById("warning");
 function showCart(show) {
   let cart = document.getElementById("cart");
   if (show) {
     showDetail(false);
-    cart.style.right = "0";
-    if(window.innerWidth >= 800){
+    warning.style.opacity = 0;
+    cart.style.right = 0;
+    if(window.innerWidth >= 800 && window.innerWidth <= 1000){
+      main.style.marginRight = "350px";
+    } else if(window.innerWidth >= 800){
       main.style.marginRight = "500px";
     }
   } else {
     cart.style.right = "-800px";
-    main.style.marginRight = "0";
+    main.style.marginRight = 0;
   }
 }
 
@@ -142,14 +148,14 @@ emailInput.value = email;
 
 function checkout() {
   if (window.cartItems.length == 0) {
-    document.getElementById("warning").style.opacity = 1;
+    warning.style.opacity = 1;
     window.orderPlaced = false;
     window.dispatchEvent(new Event("update"));
     return;
   }
 
   if (validateEmail()) {
-    document.getElementById("warning").style.opacity = 0;
+    warning.style.opacity = 0;
 
     createEmail();
 
