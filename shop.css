@@ -172,8 +172,9 @@ div.item .desc {
   background-color: rgb(17, 17, 17);
   justify-items: center;
   padding-top: 20px;
-  width: 500px;
-  height: 470px;
+  min-width: 350px;
+  width: 30%;
+  height: auto;
   animation: zoom 0.5s;
 }
 
