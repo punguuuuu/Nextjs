@@ -5,11 +5,13 @@ class ShopItems extends React.Component {
 
     showDetails = (items) => {
         document.getElementById("detail").style.right = 0;
-        document.getElementById("main").style.marginRight = "500px";
         document.getElementById("image").src = items.src;
         document.getElementById("caption").innerHTML = items.alt;
         document.getElementById("message").style.opacity = 0;
         document.getElementById("cart").style.right = "-500px";
+        if(window.innerWidth >= 800){
+            document.getElementById("main").style.marginRight = "500px";
+        }
     }
 
     render(){

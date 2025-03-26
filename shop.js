@@ -29,7 +29,9 @@ let main = document.getElementById("main");
 function showMenu(show) {
   if (show) {
     menu.style.left = "0px";
-    main.style.marginLeft = "300px";
+    if(window.innerWidth >= 800){
+      main.style.marginLeft = "300px";
+    }
   } else {
     menu.style.left = "-300px";
     main.style.marginLeft = "0";
@@ -54,12 +56,18 @@ function showDetail(show) {
   if (show) {
     showCart(false);
     detail.style.right = "0";
-    main.style.marginRight = "500px";
     message.style.opacity = 0;
+    if(window.innerWidth >= 800){
+      main.style.marginRight = "500px";
+    }
     // quantity.innerHTML = 1;
     // value = 1;
   } else {
-    detail.style.right = "-500px";
+    if(window.innerWidth >= 800){
+      detail.style.right = "-500px";
+    } else {
+      detail.style.right = "-1000px";
+    }
     main.style.marginRight = "0";
   }
 

@@ -193,3 +193,32 @@ div.item .desc {
   font-size: 50px;
   opacity: 0;
 }
+
+@media screen and (max-width:800px) {
+  #detail {
+    width: 100%;
+    right: -1000px;
+    transition: right 1s;
+  }
+  
+  .detail-content {
+    width: 50%;
+    height: auto;
+  }
+  
+  .customBtn {
+    width: 50%;
+    bottom: 130px;
+    left: 200px;
+  }
+
+  .message {
+    left: 280px;
+    bottom: 20px;
+  }
+
+  .loading {
+    left: 340px;
+    bottom: 122px;
+  }  
+}

@@ -29,7 +29,10 @@ body {
   font-size: 60px;
   text-align: center;
   overflow-x: hidden;
-  overflow-y: hidden;
+}
+
+h1 {
+  margin: 30px 100px;
 }
 
 #main {
@@ -151,7 +154,7 @@ a:hover {
   position: absolute;
   font-size: 70px;
   z-index: 1;
-  padding-left: 15px;
+  margin-left: -25px;
   width: 100%;
   color: black;
   text-align: center;
@@ -376,17 +379,30 @@ button:hover {
 @keyframes fade {
   from {
     opacity: 0.1;
-    transform: translateY(50px);
+    position: relative;
+    top: 50px;
   }
   to {
     opacity: 1;
-    transform: translateY(0px);
+    position: relative;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  h1 {
+    font-size: 100px;
+    margin: 30px 150px;
+  }
+
+  .tooltip .tooltiptext {
+    font-size: 60px;
   }
 }
 
 @media screen and (max-width: 800px){
   h1 {
-    font-size: 70px;
+    margin: 30px 50px;
   }
 
   .tooltip .tooltiptext {
@@ -400,23 +416,32 @@ button:hover {
   }
 
   .menu {
-    width: 200px;
+    width: 100%;
     font-size: 50px;
+    left: -800px;
+    transition: left  1s;
   }
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 600px){
   h1 {
-    font-size: 100px;
-    margin:30px 150px;
+    font-size: 90px;
   }
 
   .tooltip .tooltiptext {
-    font-size: 60px;
+    font-size: 40px;
+    margin-left: -15px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  h1 {
+    font-size: 75px;
   }
 
-  .menu {
-    width: 250px;
-    font-size: 60px;
+  #menuBtn {
+    font-size: 40px;
+    top: 20px;
+    margin-left: -40px;
   }
 }

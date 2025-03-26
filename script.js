@@ -12,11 +12,15 @@ let main = document.getElementById("main");
 function showMenu(show) {
   if (show) {
     menu.style.left = "0px";
-    if(window.innerWidth >= 800){
+    if(window.innerWidth >= 1000){
       main.style.marginLeft = "300px";
     }
   } else {
-    menu.style.left = "-300px";
+    if(window.innerWidth >= 800){
+      menu.style.left = "-300px";
+    } else {
+      menu.style.left = "-800px";
+    }
     main.style.marginLeft = "0";
   }
 
