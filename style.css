@@ -415,6 +415,12 @@ button:hover {
     font-size: 50px;
   }
 
+  #toTopBtn {
+    font-size: 40px;
+    top: 60px;
+    margin-right: 0;
+  }
+
   #menuBtn {
     font-size: 40px;
     top: 20px;

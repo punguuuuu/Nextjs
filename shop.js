@@ -33,7 +33,7 @@ function showMenu(show) {
       main.style.marginLeft = "300px";
     }
   } else {
-    menu.style.left = "-300px";
+    menu.style.left = "-800px";
     main.style.marginLeft = "0";
   }
 
@@ -57,16 +57,16 @@ function showDetail(show) {
     showCart(false);
     detail.style.right = "0";
     message.style.opacity = 0;
-    if(window.innerWidth >= 800){
+    if(window.innerWidth >= 1000){
       main.style.marginRight = "500px";
     }
     // quantity.innerHTML = 1;
     // value = 1;
   } else {
-    if(window.innerWidth >= 800){
+    if(window.innerWidth >= 1000){
       detail.style.right = "-500px";
     } else {
-      detail.style.right = "-1000px";
+      detail.style.right = "-800px";
     }
     main.style.marginRight = "0";
   }
@@ -113,9 +113,11 @@ function showCart(show) {
   if (show) {
     showDetail(false);
     cart.style.right = "0";
-    main.style.marginRight = "500px";
+    if(window.innerWidth >= 800){
+      main.style.marginRight = "500px";
+    }
   } else {
-    cart.style.right = "-500px";
+    cart.style.right = "-800px";
     main.style.marginRight = "0";
   }
 }

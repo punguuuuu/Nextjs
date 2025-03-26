@@ -31,14 +31,14 @@ div.item .desc {
   height: 100%;
   width: 500px;
   top: 0;
-  right: -500px;
+  right: -800px;
   list-style: none;
   background-color: rgb(17, 17, 17);
   margin: 0px;
   padding-top: 50px;
   overflow: hidden;
   z-index: 5;
-  transition: right 0.5s;
+  transition: right 0.5s ease;
 }
 
 .detail-content {
@@ -56,7 +56,7 @@ div.item .desc {
   border: 3px solid white;
   overflow: hidden;
   bottom: 130px;
-  left: 105px;
+  left: 20%;
 }
 
 #addBtn:hover {
@@ -102,7 +102,6 @@ div.item .desc {
 .loading {
   position: absolute;
   height: 95px;
-  left: 205px;
   bottom: 122px;
 }
 
@@ -110,7 +109,6 @@ div.item .desc {
   position: absolute;
   opacity: 0;
   font-size: 50px;
-  left: 150px;
   bottom: 20px;
 }
 
@@ -129,14 +127,14 @@ div.item .desc {
   height: 100%;
   width: 500px;
   top: 0;
-  right: -500px;
+  right: -800px;
   list-style: none;
   background-color: rgb(17, 17, 17);
   margin: 0px;
   padding-top: 50px;
   overflow: hidden;
   z-index: 4;
-  transition: right 0.5s;
+  transition: right 0.5s ease;
 }
 
 #cartInfo {
@@ -197,28 +195,33 @@ div.item .desc {
 @media screen and (max-width:800px) {
   #detail {
     width: 100%;
-    right: -1000px;
     transition: right 1s;
+  }
+
+  #cartBtn {
+    font-size: 40px;
+    top: 20px;
+    margin-right: -40px;
   }
   
   .detail-content {
-    width: 50%;
+    width: 80%;
+    max-width: 400px;
     height: auto;
   }
-  
-  .customBtn {
-    width: 50%;
-    bottom: 130px;
-    left: 200px;
+
+  #cart {
+    width: 100%;
+    transition: right 1s;
+  }
+}
+
+@media screen and (max-width:500px) {
+  #addBtn{
+    font-size: 50px;
   }
 
-  .message {
-    left: 280px;
-    bottom: 20px;
+  #checkoutBtn{
+    font-size: 50px;
   }
-
-  .loading {
-    left: 340px;
-    bottom: 122px;
-  }  
 }

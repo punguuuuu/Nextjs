@@ -68,13 +68,15 @@
         <p id="quantityValue" class="quantityValue">1</p>
         <a class="quantityBtn" onclick="changeQuantity(true)">+</a>
       </div> -->
-      <img class="loading" src="loading.gif" />
-      <button id="addBtn" class="customBtn" onclick="addToCart()">
-        Add to cart
-      </button>
-      <p id="message" class="message" style="color: rgb(82, 177, 82)">
-        Added to cart !
-      </p>
+      <div style="display: flex; justify-content: center">
+        <img class="loading" src="loading.gif" />
+        <button id="addBtn" class="customBtn" onclick="addToCart()">
+          Add to cart
+        </button>
+        <p id="message" class="message" style="color: rgb(82, 177, 82); text-align: center;">
+          Added to cart !
+        </p>
+      </div>
     </div>
 
     <div id="cart">
@@ -83,7 +85,9 @@
       <button id="checkoutBtn" class="customBtn" onclick="checkout()">
         Checkout
       </button>
-      <p id="warning" class="message" style="color: red">Cart is empty !</p>
+      <div style="display: flex; justify-content: center">
+        <p id="warning" class="message" style="color: red">Cart is empty !</p>
+      </div>
     </div>
 
     <div id="emailModal">
