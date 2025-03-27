@@ -56,10 +56,10 @@ div.item .desc {
 .customBtn {
   position: absolute;
   width: 60%;
-  height: 8%;
+  height: 80px;
   color: white;
   background-color: rgb(17, 17, 17);
-  font-size: 70px;
+  font-size: 60px;
   border: 3px solid white;
   overflow: hidden;
   bottom: 130px;
@@ -153,6 +153,17 @@ div.item .desc {
   height: 65vh;
   overflow-y: auto;
   direction: rtl;
+}
+
+.cartItem {
+  color: white;
+  margin: 0;
+}
+
+.remove {
+  color: red;
+  cursor: "pointer";
+  font-size: 40px;
 }
 
 #checkoutBtn:hover {
@@ -256,5 +267,13 @@ div.item .desc {
 @media screen and (max-width:500px) {
   h2 {
     font-size: 80px;
+  }
+
+  .cartItem {
+    font-size: 50px;
+  }
+
+  .remove {
+    font-size: 35px;
   }
 }

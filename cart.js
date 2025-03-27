@@ -51,13 +51,9 @@ class Cart extends React.Component {
             <div style={this.itemStyle} key={index}>
               <img src={item.src} alt="Cart Item" />
               <div style={this.textContainerStyle}>
-                <p style={{ color: "white", margin: "0" }}>{item.desc}</p>
+                <p className="cartItem">{item.desc}</p>
                 <a
-                  style={{
-                    color: "red",
-                    cursor: "pointer",
-                    fontSize: "40px",
-                  }}
+                  className="remove"
                   onClick={() => this.removeItem(index)}
                 >
                   Remove

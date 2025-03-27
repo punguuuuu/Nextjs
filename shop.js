@@ -71,11 +71,7 @@ function showDetail(show) {
     // quantity.innerHTML = 1;
     // value = 1;
   } else {
-    if(window.innerWidth >= 800){
-      detail.style.right = "-500px";
-    } else {
-      detail.style.right = "-800px";
-    }
+    detail.style.right = "-800px";
     main.style.marginRight = 0;
   }
 
