@@ -25,8 +25,8 @@
     <script type="text/babel" src="items.js"></script>
   </head>
 
-  <body>
-    <ul id="menu" class="menu">
+  <body onmousemove="mouseHover(event)">
+    <ul id="menu" class="menu" onmouseleave="showMenu(false)">
       <li>
         <a href="#close" class="menuClose" onclick="showMenu(false)">X</a>
       </li>
@@ -42,7 +42,7 @@
 
     <main id="main" class="main">
       <button id="menuBtn" onclick="toggleMenu(true)">Menu</button>
-      <button id="cartBtn" onclick="showCart(true)">Cart</button>
+      <button id="cartBtn" onclick="toggleCart()">Cart</button>
       <button id="toTopBtn" onclick="toTop()">Back to top</button>
 
       <h1 style="font-weight: normal; margin-bottom: -50px">Shop</h1>

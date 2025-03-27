@@ -42,6 +42,12 @@ function showMenu(show) {
   }, 0);
 }
 
+function mouseHover (event){
+  if(event.clientX < 30){
+    showMenu(true);
+  }
+}
+
 function toggleMenu(){
   menu.style.left == "0px" ? showMenu(false) : showMenu(true);
 }
@@ -111,6 +117,7 @@ function addToCart() {
 }
 
 let warning = document.getElementById("warning");
+
 function showCart(show) {
   let cart = document.getElementById("cart");
   if (show) {
@@ -128,6 +135,9 @@ function showCart(show) {
   }
 }
 
+function toggleCart(){
+  cart.style.right == "0px" ? showCart(false) : showCart(true);
+}
 
 function showEmailContainer(show) {
   let modal = document.getElementById("emailModal");

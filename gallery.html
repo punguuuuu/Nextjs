@@ -24,8 +24,8 @@
     <script type="text/babel" src="gallery.js"></script>
   </head>
 
-  <body>
-    <ul id="menu" class="menu">
+  <body onmousemove="mouseHover(event)">
+    <ul id="menu" class="menu" onmouseleave="showMenu(false)">
       <li>
         <a href="#close" class="menuClose" onclick="showMenu(false)">X</a>
       </li>

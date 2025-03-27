@@ -85,6 +85,11 @@ div.item .desc {
   animation-iteration-count: infinite;
 }
 
+#caption {
+  font-size: 70px;
+  color: white;
+}
+
 .quantity {
   position: absolute;
   display: flex;

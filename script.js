@@ -29,6 +29,12 @@ function toggleMenu(){
   menu.style.left == "0px" ? showMenu(false) : showMenu(true);
 }
 
+function mouseHover (event){
+  if(event.clientX < 30){
+    showMenu(true);
+  }
+}
+
 let gifPlaying = false;
 function playGif() {
   if (gifPlaying) {
