@@ -164,41 +164,6 @@ a:hover {
   visibility: visible;
 }
 
-#category {
-  display: flex;
-  justify-content: center;
-}
-
-#category a {
-  width:25%
-}
-
-.gallery-container {
-  position: relative;
-  justify-items: center;
-}
-
-.gallery {
-  display: flex;
-  width: 85%;
-  gap: 10px;
-  justify-content: flex-start;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-top: 50px;
-}
-
-.gallery img {
-  height: 45vh;
-  display: inline-block;
-  box-sizing: border-box;
-}
-
-.gallery img:hover {
-  cursor: pointer;
-  border: 2px solid rgb(219, 217, 217);
-}
-
 .fade-in {
   animation: fade 0.5s;
 }
@@ -251,65 +216,6 @@ a:hover {
   cursor: pointer;
   animation: vibrate 0.2s;
   animation-iteration-count: infinite;
-}
-
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  width: auto;
-  color: black;
-  top: 40%;
-  padding: 10px;
-}
-
-.prev.disabled,
-.next.disabled {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.prev {
-  left: 2%;
-}
-
-.next {
-  right: 2%;
-}
-
-.input-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.lineEdit {
-  width: 30%;
-  height: 52px;
-  font-family: custom, sans-serif;
-  font-size: 60px;
-  border: 3px solid black;
-}
-
-button {
-  width: 200px;
-  height: 60px;
-  font-family: custom, sans-serif;
-  font-size: 60px;
-  border: 3px solid black;
-  background: none;
-}
-
-button:hover {
-  animation: vibrate 0.2s infinite;
-  cursor: pointer;
-}
-
-.caption {
-  position: absolute;
-  bottom: 10%;
-  left: 43.5%;
 }
 
 #toTopBtn {

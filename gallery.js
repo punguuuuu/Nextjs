@@ -18,8 +18,19 @@ class Gallery extends React.Component {
 
     scrollGallery = (direction) => {
         const gallery = this.galleryRef.current;
+        let scrollDistance = 0;
+        if(window.innerWidth <= 600){
+            const images = document.querySelectorAll("img");
+            let imgWidth = images[0].clientWidth + (window.innerWidth * 0.01 * 2);
+            scrollDistance = imgWidth;
+        } else if (window.innerWidth <= 1000){
+            scrollDistance = 800;
+        } else {
+            scrollDistance = 1200;
+        }
+
         if (gallery) {
-            gallery.scrollBy({ left: direction * 1200, behavior: "smooth" });
+            gallery.scrollBy({ left: direction * scrollDistance, behavior: "smooth" });
             setTimeout(this.updateBtn, 600);
         }
     };
@@ -61,6 +72,7 @@ class Gallery extends React.Component {
     render() {
         return (
             <div className={`gallery-container ${this.state.fade ? "fade-in" : ""}`}>
+                <a className={`prev ${!this.state.canScrollLeft ? "disabled" : ""}`}  onClick={() => this.scrollGallery(-1)}>&#10094;</a>
                 <div className="gallery" ref={this.galleryRef}>
                     {this.props.images.map((image, index) => (
                         <img 
@@ -80,8 +92,6 @@ class Gallery extends React.Component {
                         <div id="caption">{this.state.modalCaption}</div>
                     </div>
                 )}
-
-                <a className={`prev ${!this.state.canScrollLeft ? "disabled" : ""}`}  onClick={() => this.scrollGallery(-1)}>&#10094;</a>
                 <a className={`next ${!this.state.canScrollRight ? "disabled" : ""}`}  onClick={() => this.scrollGallery(1)}>&#10095;</a>
             </div>
         );
@@ -121,7 +131,7 @@ class Category extends React.Component {
                 
                 <Gallery images={this.state.currentGallery} />
                 
-                <p style={{ marginTop: "40px"}} className={`${this.state.fade ? "fade-in" : ""}`}>{this.state.currentDesc}</p>
+                <p style={{ marginTop: "40px"}} className={`desc ${this.state.fade ? "fade-in" : ""}`}>{this.state.currentDesc}</p>
             </div>
         );
     }
