@@ -86,6 +86,7 @@ div.item .desc {
 }
 
 #caption {
+  margin: 20px 0;
   font-size: 70px;
   color: white;
 }
@@ -275,5 +276,9 @@ div.item .desc {
 
   .remove {
     font-size: 35px;
+  }
+  
+  #caption {
+    font-size: 60px;
   }
 }
