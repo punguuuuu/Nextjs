@@ -55,10 +55,36 @@
     padding: 0 50px;
 }
 
-.caption {
-    position: absolute;
-    bottom: 10%;
-    left: 43.5%;
+.modal {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 130px;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+  
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal-content,
+#caption {
+    animation: zoom 0.5s;
+    margin: 0;
+    text-align: center;
+    padding: 25px;
+    color: white;
 }
 
 .input-container {
@@ -70,24 +96,21 @@
 
 .lineEdit {
     width: 30%;
+    min-width: 300px;
     height: 52px;
+    margin: 20px 0;
     font-family: custom, sans-serif;
     font-size: 60px;
     border: 3px solid black;
 }
 
-button {
-    width: 200px;
-    height: 60px;
-    font-family: custom, sans-serif;
-    font-size: 60px;
-    border: 3px solid black;
-    background: none;
+#submitBtn:hover {
+    background-color: rgb(17, 17, 17);
+    color: white;
 }
 
-button:hover {
-    animation: vibrate 0.2s infinite;
-    cursor: pointer;
+.text {
+    padding: 0 50px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -109,6 +132,14 @@ button:hover {
 @media screen and (max-width: 800px) {
     #category a {
         font-size: 50px;
+    }
+
+    .input-container {
+        flex-direction: column;
+    }
+
+    .lineEdit {
+        width: 60%;
     }
 }
 
@@ -144,11 +175,15 @@ button:hover {
         left: 2%;
     }
       
-      .next {
+    .next {
         right: 2%;
     }
 
     .desc {
-        padding-top: 60px;
+        padding-top: 35px;
+    }
+
+    .text {
+        font-size: 55px;
     }
 }

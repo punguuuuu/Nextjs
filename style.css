@@ -36,6 +36,20 @@ h1 {
   margin: 30px 100px;
 }
 
+button {
+  width: 200px;
+  height: 60px;
+  font-family: custom, sans-serif;
+  font-size: 60px;
+  border: 3px solid black;
+  background: none;
+}
+
+button:hover {
+  animation: vibrate 0.2s infinite;
+  cursor: pointer;
+}
+
 #main {
   position: relative;
   padding: 0;
@@ -166,41 +180,6 @@ a:hover {
 
 .fade-in {
   animation: fade 0.5s;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  padding-top: 130px;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  height: 60%;
-  max-width: 600px;
-}
-
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  text-align: center;
-  padding: 25px;
-  color: white;
-  font-size: 80px;
-}
-
-.modal-content,
-#caption {
-  animation: zoom 0.5s;
 }
 
 .close {

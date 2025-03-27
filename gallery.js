@@ -19,7 +19,7 @@ class Gallery extends React.Component {
     scrollGallery = (direction) => {
         const gallery = this.galleryRef.current;
         let scrollDistance = 0;
-        if(window.innerWidth <= 600){
+        if(window.innerWidth <= 800){
             const images = document.querySelectorAll("img");
             let imgWidth = images[0].clientWidth + (window.innerWidth * 0.01 * 2);
             scrollDistance = imgWidth;
@@ -59,7 +59,7 @@ class Gallery extends React.Component {
             () => {
                 let modal = document.getElementById("modal");
                 if (modal) {
-                    modal.style.display = "block";
+                    modal.style.display = "flex";
                 }
             }
         );
