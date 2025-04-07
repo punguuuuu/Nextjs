@@ -1,0 +1,43 @@
+.stacker{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 85%;
+}
+
+#gameBtn {
+    animation: none;
+    height: 100px;
+    width: 300px;
+    font-size: 70px;
+    border-radius: 50px;
+}
+
+#gameBtn:hover {
+    background-color: black;
+    color: white;
+}
+
+#game {
+    height: 90vh;
+    border: 2px black solid;
+    margin-top: -10px;
+    margin-right: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.column {
+    display: flex;
+    height: 100%;
+}
+
+.box {
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    border: 1px lightgrey solid;
+}
+
+.bar {
+  background-color: rgb(17, 17, 17);
+}

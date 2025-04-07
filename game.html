@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <title>pungu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="game.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="game.js" defer></script>
+  </head>
+
+  <body onmousemove="mouseHover(event)">
+    <ul id="menu" class="menu" onmouseleave="showMenu(false)">
+      <li>
+        <a href="#close" class="menuClose" onclick="showMenu(false)">X</a>
+      </li>
+      <li><a href="#home" onclick="changePage('index.html')">Home</a></li>
+      <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
+      <li><a href="#gallery" onclick="changePage('gallery.html')">Gallery</a></li>
+      <li><a href="#game" onclick="changePage('game.html')">Stacker</a></li>
+    </ul>
+
+    <main id="main" class="main" style="justify-items: center;">
+      <button id="menuBtn" onclick="toggleMenu()">Menu</button>
+
+      <div class="stacker">
+        <div style="flex: 1;">
+            <h1>Stacker</h1>
+            <button id="gameBtn">Start</button>
+        </div>
+        <div id="game"></div>
+      </div>
+    </main>
+  </body>
+</html>
