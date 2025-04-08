@@ -22,12 +22,12 @@
     height: 90vh;
     border: 2px black solid;
     margin-top: -10px;
-    margin-right: 200px;
+    margin-right: 150px;
     display: flex;
     flex-direction: column;
 }
 
-.column {
+.row {
     display: flex;
     height: 100%;
 }
@@ -38,6 +38,42 @@
     border: 1px lightgrey solid;
 }
 
+.finalRow {
+    width: 100%;
+    background-color: rgb(208, 241, 208);
+    border: 1px lightgrey solid;
+}
+
 .bar {
   background-color: rgb(17, 17, 17);
+}
+
+.blink {
+    animation: blink 0.15s forwards;
+    animation-iteration-count: 3;
+}
+
+#gameContainer {
+    position: relative;
+}
+
+#gameStatus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding-top: 200px;
+    font-size: 95px;
+    text-align: center;
+    display: none;
+    z-index: 3;
+}
+
+@keyframes blink {
+    from{
+        background-color: black;
+    } 
+    to {
+        background-color: rgb(245, 245, 245);
+    }
 }
