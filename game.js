@@ -50,6 +50,7 @@ let length = 3;
 let container = document.getElementById("game");
 const button = document.getElementById("gameBtn");
 const gameStatus = document.getElementById("gameStatus");
+const text = document.getElementById("text");
 
 function init(){
     previousBar.length = 0;
@@ -60,8 +61,10 @@ function init(){
     length = 3;
     container.style.minWidth = (container.offsetHeight * (columns/rows)) + "px";
     container.style.opacity = 1;
+    container.style.cursor = "default"; 
     gameStatus.style.width = container.offsetWidth + "px";
     gameStatus.style.display = "none";
+    text.style.visibility = "hidden";
 
     container.innerHTML = "";
     for (let y = 0; y < rows; y++){
@@ -81,6 +84,19 @@ function init(){
 
 init();
 
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space" && button.innerHTML === "Drop") {
+        button.click();
+        event.preventDefault();
+    }
+});
+
+container.addEventListener('click', () => {
+    if (button.innerHTML === "Drop"){
+        button.click();
+    }
+})
+
 button.addEventListener("click", () => {
     if (button.innerHTML === "Start"){
         button.innerHTML = "Drop"
@@ -99,8 +115,16 @@ button.addEventListener("click", () => {
                 gameStatus.innerHTML = "You Win !!!"
                 gameStatus.style.display = "block";
                 gameStatus.style.color = "green";
+                text.style.visibility = "hidden";
+                
+                confetti({
+                    particleCount: 200,
+                    spread: 150,
+                    origin: { y: 0.6 }
+                  });
+
                 button.innerHTML = "Play Again";
-                container.style.opacity = 0.7;
+                container.style.opacity = 0.5;
                 return;
             }
             
@@ -121,6 +145,7 @@ button.addEventListener("click", () => {
 
         } else {
             button.innerHTML = "Try Again";
+            text.style.visibility = "hidden";
         }
     } else if (button.innerHTML === "Try Again" || button.innerHTML === "Play Again") {
         button.innerHTML = "Drop"
@@ -132,6 +157,8 @@ button.addEventListener("click", () => {
 
 function begin(){
     let direction = "right";
+    text.style.visibility = "visible";
+    container.style.cursor = "pointer";
     moveBar = setInterval(() => {
         currentBar.length = 0;
         for (let col = 0; col < columns; col++){
@@ -182,7 +209,7 @@ function checkBar(){
         gameStatus.innerHTML = "Game Over"
         gameStatus.style.display = "block";
         gameStatus.style.color = "red";
-        container.style.opacity = 0.7;
+        container.style.opacity = 0.5;
         return false;  
     } else {
         previousBar = [...newBar];
