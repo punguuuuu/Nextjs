@@ -51,6 +51,7 @@ let container = document.getElementById("game");
 const button = document.getElementById("gameBtn");
 const gameStatus = document.getElementById("gameStatus");
 const text = document.getElementById("text");
+const prize = document.getElementById("prize");
 
 function init(){
     previousBar.length = 0;
@@ -61,7 +62,6 @@ function init(){
     length = 3;
     container.style.minWidth = (container.offsetHeight * (columns/rows)) + "px";
     container.style.opacity = 1;
-    container.style.cursor = "default"; 
     gameStatus.style.width = container.offsetWidth + "px";
     gameStatus.style.display = "none";
     text.style.visibility = "hidden";
@@ -85,16 +85,18 @@ function init(){
 init();
 
 document.addEventListener("keydown", function(event) {
-    if (event.code === "Space" && button.innerHTML === "Drop") {
-        button.click();
+    if (event.code === "Space") {
         event.preventDefault();
+        setTimeout(() => {
+            button.click();
+        }, interval);
     }
 });
 
 container.addEventListener('click', () => {
-    if (button.innerHTML === "Drop"){
+    setTimeout(() => {
         button.click();
-    }
+    }, interval);
 })
 
 button.addEventListener("click", () => {
@@ -115,7 +117,9 @@ button.addEventListener("click", () => {
                 gameStatus.innerHTML = "You Win !!!"
                 gameStatus.style.display = "block";
                 gameStatus.style.color = "green";
-                text.style.visibility = "hidden";
+                text.style.color = "green";
+                text.innerHTML = "Claim your prize !";
+                prize.style.display = "block";
                 
                 confetti({
                     particleCount: 200,
@@ -123,7 +127,7 @@ button.addEventListener("click", () => {
                     origin: { y: 0.6 }
                   });
 
-                button.innerHTML = "Play Again";
+                button.innerHTML = "Claim Prize";
                 container.style.opacity = 0.5;
                 return;
             }
@@ -147,6 +151,11 @@ button.addEventListener("click", () => {
             button.innerHTML = "Try Again";
             text.style.visibility = "hidden";
         }
+    } else if (button.innerHTML === "Claim Prize") {
+        window.scrollTo({top:document.body.scrollHeight});
+        text.style.visibility = "hidden";
+        button.innerHTML = "Play Again";
+
     } else if (button.innerHTML === "Try Again" || button.innerHTML === "Play Again") {
         button.innerHTML = "Drop"
         init();
@@ -158,7 +167,8 @@ button.addEventListener("click", () => {
 function begin(){
     let direction = "right";
     text.style.visibility = "visible";
-    container.style.cursor = "pointer";
+    text.style.color = "black";
+    text.innerHTML = "use spacebar or click on the stacker";
     moveBar = setInterval(() => {
         currentBar.length = 0;
         for (let col = 0; col < columns; col++){
