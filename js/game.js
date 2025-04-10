@@ -85,16 +85,12 @@ function init(){
 document.addEventListener("keydown", function(event) {
     if (event.code === "Space") {
         event.preventDefault();
-        setTimeout(() => {
-            button.click();
-        }, interval);
+        button.click();
     }
 });
 
 container.addEventListener('click', () => {
-    setTimeout(() => {
-        button.click();
-    }, interval);
+    button.click();
 })
 
 button.addEventListener("click", () => {

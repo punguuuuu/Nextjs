@@ -42,11 +42,11 @@ function playGif() {
   }
 
   img = document.getElementById("gif");
-  img.src = "spin.gif";
+  img.src = "./images/spin.gif";
   gifPlaying = true;
 
   setTimeout(function () {
-    img.src = "spin0.png";
+    img.src = "./images/spin0.png";
     gifPlaying = false;
   }, 2100);
 }
