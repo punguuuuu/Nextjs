@@ -92,7 +92,7 @@ a:hover {
   margin: 0px;
   padding-top: 50px;
   padding-left: 0;
-  font-size: larger;
+  font-size: 75px;
   overflow: hidden;
   z-index: 5;
   transition: left 0.5s ease;
@@ -226,6 +226,63 @@ a:hover {
   border: 3px solid black;
 }
 
+#emailModal {
+  position: fixed;
+  justify-items: center;
+  z-index: 10;
+  padding-top: 220px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#emailContainer {
+  background-color: rgb(17, 17, 17);
+  justify-items: center;
+  padding: 30px 0;
+  min-width: 350px;
+  width: 30%;
+  height: auto;
+  animation: zoom 0.5s;
+}
+
+#emailContainer * {
+  margin: 10px 0;
+}
+
+.containerBtn {
+  display: block;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 60px;
+}
+
+.containerBtn:hover {
+  color: white;
+  display: block;
+  animation: vibrate 0.2s;
+  animation-iteration-count: infinite;
+}
+
+#confirmBtn {
+  margin-top: 30px;
+  color: white;
+  background-color: rgb(17, 17, 17);
+  border: 3px solid white;
+}
+
+#confirmBtn:hover {
+  background-color: rgb(235, 235, 235);
+  color: black;
+}
+
+#invalidEmail {
+  color: red;
+  font-size: 50px;
+}
+
 @keyframes vibrate {
   0% {
     transform: translate(5px, 5px) rotate(5deg);
@@ -284,13 +341,17 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   h1 {
     font-size: 100px;
     margin: 30px 150px;
   }
 
   .tooltip .tooltiptext {
+    font-size: 60px;
+  }
+
+  .menu {
     font-size: 60px;
   }
 }

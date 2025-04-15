@@ -21,25 +21,13 @@
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/prop-types@latest/prop-types.js"></script>
+    <script type="text/babel" src="./js/menu.js"></script>
     <script type="text/babel" src="./js/cart.js"></script>
     <script type="text/babel" src="./js/items.js"></script>
   </head>
 
   <body onmousemove="mouseHover(event)">
-    <ul id="menu" class="menu" onmouseleave="showMenu(false)">
-      <li>
-        <a href="#close" class="menuClose" onclick="showMenu(false)">X</a>
-      </li>
-      <li><a href="#index" onclick="changePage('index.html')">Home</a></li>
-      <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
-      <li><a href="#gallery" onclick="changePage('gallery.html')">Gallery</a></li>
-      <li><a href="#game" onclick="changePage('game.html')">Stacker</a></li>
-      <li>
-        <a href="#email" class="changeEmail" onclick="showEmailContainer(true)"
-          >Change Email</a
-        >
-      </li>
-    </ul>
+    <nav id="menu"></nav>
 
     <main id="main" class="main">
       <button id="menuBtn" onclick="toggleMenu(true)">Menu</button>
@@ -70,7 +58,7 @@
         <a class="quantityBtn" onclick="changeQuantity(true)">+</a>
       </div> -->
       <div style="display: flex; justify-content: center">
-        <img class="loading" src="loading.gif" />
+        <img class="loading" src="./images/loading.gif" />
         <button id="addBtn" class="customBtn" onclick="addToCart()">
           Add to cart
         </button>
@@ -91,24 +79,5 @@
       </div>
     </div>
 
-    <div id="emailModal">
-      <div id="emailContainer">
-        <a
-          href="#close"
-          class="containerBtn"
-          style="margin-bottom: 40px"
-          onclick="showEmailContainer(false)"
-          >X</a
-        >
-        <p style="width: 60%; color: white">Please provide us your email</p>
-        <input
-          type="text"
-          class="lineEdit"
-          style="width: 80%; font-size: 40px"
-        />
-        <button id="confirmBtn" onclick="checkEmail()">Confirm</button>
-        <p id="invalidEmail">Invalid email !</p>
-      </div>
-    </div>
   </body>
 </html>

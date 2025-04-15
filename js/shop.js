@@ -1,30 +1,10 @@
-function changePage(page) {
-  if (!window.location.pathname.includes(page)) {
-    window.location.href = page;
-  } else {
-    showMenu(false);
-  }
-}
-
-function showMenu(show) {
-  if (show) {
-    menu.style.left = 0;
-    if(window.innerWidth >= 800){
-      main.style.marginLeft = "300px";
-    }
-  } else {
-    menu.style.left = "-800px";
-    main.style.marginLeft = 0;
-  }
-  
-  setTimeout(() => {
-    window.scrollTo(0, window.scrollY);
-  }, 0);
+function toggleMenu(){
+  window.dispatchEvent(new Event("toggleMenu"));
 }
 
 function mouseHover (event){
   if(event.clientX < 30){
-    showMenu(true);
+    window.dispatchEvent(new Event("showMenu"));
   }
 }
 
@@ -43,13 +23,6 @@ window.onscroll = function () {
 function toTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-}
-
-let menu = document.getElementById("menu");
-let main = document.getElementById("main");
-
-function toggleMenu(){
-  menu.style.left == "0px" ? showMenu(false) : showMenu(true);
 }
 
 let detail = document.getElementById("detail");
@@ -104,6 +77,7 @@ function addToCart() {
   };
 
   window.cartItems.push(itemInfo);
+  sessionStorage.setItem("cartItems", JSON.stringify(window.cartItems));
 
   setTimeout(() => {
     addBtn.style.display = "block";
@@ -135,22 +109,11 @@ function toggleCart(){
   cart.style.right == "0px" ? showCart(false) : showCart(true);
 }
 
-function showEmailContainer(show) {
-  let modal = document.getElementById("emailModal");
-  let emailContainer = document.getElementById("emailContainer");
-  if(show){
-    modal.style.display = "block"
-  } else {
-    modal.style.display = "none"
-  }
-}
-
-window.orderPlaced = false;
 let email = sessionStorage.getItem("email");
-let emailInput = document.querySelector(".lineEdit");
-let invalid = document.getElementById("invalidEmail");
 
-emailInput.value = email;
+document.addEventListener("DOMContentLoaded", () => {
+  window.orderPlaced = false;
+});
 
 function checkout() {
   if (window.cartItems.length == 0) {
@@ -166,27 +129,18 @@ function checkout() {
     createEmail();
 
     window.cartItems.length = 0;
+    sessionStorage.setItem("cartItems", window.cartItems);
     window.orderPlaced = true;
     window.dispatchEvent(new Event("update"));
   } else {
-    showEmailContainer(true);
-  }
-}
-
-function checkEmail() {
-  if (validateEmail()) {
-    invalid.style.opacity = 0;
-    showEmailContainer(false);
-    sessionStorage.setItem("email", emailInput.value);
-  } else {
-    invalid.style.opacity = 1;
+    window.openEmailModal();
   }
 }
 
 function validateEmail() {
+  email = sessionStorage.getItem("email");
   return (
-    emailInput.value.trim() !== "" &&
-    emailInput.value.match(
+    email && email.trim() !== "" && email.match(
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     )
   );
@@ -216,7 +170,7 @@ function createEmail() {
       "service_eqflx1d",
       "template_u9siuy8",
       {
-        email: emailInput.value,
+        email: email,
         orderItems: orderItems,
         time: date.toLocaleString(),
       },

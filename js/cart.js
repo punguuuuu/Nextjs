@@ -2,15 +2,16 @@ class Cart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: Array.from(window.cartItems?.values() || []),
+      items: props.items,
       orderPlaced: false,
     };
   }
 
   componentDidMount() {
     window.addEventListener("update", () => {
-      this.setState({ 
-        items: Array.from(window.cartItems.values()),
+       const items = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
+       this.setState({ 
+        items: items,
         orderPlaced: window.orderPlaced
        });
     });
@@ -67,9 +68,10 @@ class Cart extends React.Component {
   }
 }
 
+const cartItems = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
 ReactDOM.render(
   <React.StrictMode>
-    <Cart />
+    <Cart items={cartItems}/>
   </React.StrictMode>,
   document.getElementById("cartInfo")
 );

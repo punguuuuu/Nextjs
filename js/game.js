@@ -1,38 +1,11 @@
-function changePage(page) {
-    if (!window.location.pathname.includes(page)) {
-      window.location.href = page;
-    } else {
-      showMenu(false);
-    }
-}
-
-let menu = document.getElementById("menu");
-let main = document.getElementById("main");
-
-function showMenu(show) {
-    if (show) {
-      menu.style.left = 0;
-      if(window.innerWidth >= 800){
-        main.style.marginLeft = "300px";
-      }
-    } else {
-      menu.style.left = "-800px";
-      main.style.marginLeft = 0;
-    }
+function toggleMenu(){
+    window.dispatchEvent(new Event("toggleMenu"));
+  }
   
-    setTimeout(() => {
-      window.scrollTo(0, window.scrollY);
-    }, 0);
-}
-
 function mouseHover (event){
     if(event.clientX < 30){
-      showMenu(true);
+      window.dispatchEvent(new Event("showMenu"));
     }
-}
-
-function toggleMenu(){
-  menu.style.left == "0px" ? showMenu(false) : showMenu(true);
 }
 
 //game

@@ -10,18 +10,22 @@
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="./js/game.js" defer></script>
+
+    <script
+    src="https://unpkg.com/react@17/umd/react.development.js"
+    crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@latest/prop-types.js"></script>
+    <script type="text/babel" src="./js/menu.js"></script>
   </head>
 
   <body onmousemove="mouseHover(event)" onload="init()">
-    <ul id="menu" class="menu" onmouseleave="showMenu(false)">
-      <li>
-        <a href="#close" class="menuClose" onclick="showMenu(false)">X</a>
-      </li>
-      <li><a href="#home" onclick="changePage('index.html')">Home</a></li>
-      <li><a href="#shop" onclick="changePage('shop.html')">Shop</a></li>
-      <li><a href="#gallery" onclick="changePage('gallery.html')">Gallery</a></li>
-      <li><a href="#game" onclick="changePage('game.html')">Stacker</a></li>
-    </ul>
+    <div id="menu"></div>
 
     <main id="main" class="main" style="justify-items: center;">
       <button id="menuBtn" onclick="toggleMenu()">Menu</button>

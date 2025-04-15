@@ -71,20 +71,6 @@ div.item .desc {
   color: black;
 }
 
-.containerBtn {
-  display: block;
-  color: white;
-  margin-bottom: 30px;
-  font-size: 60px;
-}
-
-.containerBtn:hover {
-  color: white;
-  display: block;
-  animation: vibrate 0.2s;
-  animation-iteration-count: infinite;
-}
-
 #caption {
   margin: 20px 0;
   font-size: 70px;
@@ -170,51 +156,6 @@ div.item .desc {
 #checkoutBtn:hover {
   background-color: rgb(235, 235, 235);
   color: black;
-}
-
-#emailModal {
-  display: none;
-  position: fixed;
-  justify-items: center;
-  z-index: 10;
-  padding-top: 220px;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
-
-#emailContainer {
-  background-color: rgb(17, 17, 17);
-  justify-items: center;
-  padding-top: 20px;
-  min-width: 350px;
-  width: 30%;
-  height: auto;
-  animation: zoom 0.5s;
-}
-
-#emailContainer * {
-  margin: 10px 0;
-}
-
-#confirmBtn {
-  margin-top: 30px;
-  color: white;
-  background-color: rgb(17, 17, 17);
-  border: 3px solid white;
-}
-
-#confirmBtn:hover {
-  background-color: rgb(235, 235, 235);
-  color: black;
-}
-
-#invalidEmail {
-  color: red;
-  font-size: 50px;
-  opacity: 0;
 }
 
 @media screen and (max-width:1000px) {
