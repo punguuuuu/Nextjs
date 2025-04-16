@@ -1,9 +1,9 @@
-function toggleMenu(){
+function toggleMenu() {
   window.dispatchEvent(new Event("toggleMenu"));
 }
 
-function mouseHover (event){
-  if(event.clientX < 30){
+function mouseHover(event) {
+  if (event.clientX < 30) {
     window.dispatchEvent(new Event("showMenu"));
   }
 }
@@ -36,9 +36,9 @@ function showDetail(show) {
     showCart(false);
     detail.style.right = 0;
     message.style.opacity = 0;
-    if(window.innerWidth >= 800 && window.innerWidth <= 1000){
+    if (window.innerWidth >= 800 && window.innerWidth <= 1000) {
       main.style.marginRight = "350px";
-    } else if(window.innerWidth >= 800){
+    } else if (window.innerWidth >= 800) {
       main.style.marginRight = "500px";
     }
     // quantity.innerHTML = 1;
@@ -64,7 +64,7 @@ function changeQuantity(increment) {
 
 let itemImg = document.getElementById("image");
 let itemCaption = document.getElementById("caption");
-window.cartItems = window.cartItems || [];
+window.cartItems = JSON.parse(sessionStorage.getItem("cartItems") || "[]");
 function addToCart() {
   let addBtn = document.getElementById("addBtn");
   addBtn.style.display = "none";
@@ -94,9 +94,9 @@ function showCart(show) {
     showDetail(false);
     warning.style.opacity = 0;
     cart.style.right = 0;
-    if(window.innerWidth >= 800 && window.innerWidth <= 1000){
+    if (window.innerWidth >= 800 && window.innerWidth <= 1000) {
       main.style.marginRight = "350px";
-    } else if(window.innerWidth >= 800){
+    } else if (window.innerWidth >= 800) {
       main.style.marginRight = "500px";
     }
   } else {
@@ -105,7 +105,7 @@ function showCart(show) {
   }
 }
 
-function toggleCart(){
+function toggleCart() {
   cart.style.right == "0px" ? showCart(false) : showCart(true);
 }
 
@@ -140,7 +140,9 @@ function checkout() {
 function validateEmail() {
   email = sessionStorage.getItem("email");
   return (
-    email && email.trim() !== "" && email.match(
+    email &&
+    email.trim() !== "" &&
+    email.match(
       /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     )
   );
