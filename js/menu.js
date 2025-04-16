@@ -104,6 +104,7 @@ class MenuBar extends React.Component {
               <li><a href="#shop" onClick={() => this.changePage('shop.html')}>Shop</a></li>
               <li><a href="#gallery" onClick={() => this.changePage('gallery.html')}>Gallery</a></li>
               <li><a href="#game" onClick={() => this.changePage('game.html')}>Stacker</a></li>
+              <li><a href="#art" onClick={() => this.changePage('art.html')}>Art?</a></li>
               <li>
                   <a href="#email" className="changeEmail" onClick={this.props.showEmailModal}>Change Email</a>
               </li>
