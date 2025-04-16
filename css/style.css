@@ -283,6 +283,12 @@ a:hover {
   font-size: 50px;
 }
 
+.artContainer {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
 @keyframes vibrate {
   0% {
     transform: translate(5px, 5px) rotate(5deg);
@@ -354,6 +360,10 @@ a:hover {
   .menu {
     font-size: 60px;
   }
+
+  .artContainer {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -381,6 +391,10 @@ a:hover {
     width: 100%;
     font-size: 50px;
     transition: left 1s;
+  }
+
+  .artContainer {
+    width: 80%;
   }
 }
 
