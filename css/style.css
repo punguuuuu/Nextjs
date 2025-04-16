@@ -289,6 +289,10 @@ a:hover {
   width: 35%;
 }
 
+#canvas {
+  cursor: crosshair;
+}
+
 @keyframes vibrate {
   0% {
     transform: translate(5px, 5px) rotate(5deg);
@@ -395,6 +399,10 @@ a:hover {
 
   .artContainer {
     width: 80%;
+  }
+
+  #canvas {
+    width: 100%;
   }
 }
 

@@ -12,7 +12,7 @@ function changePage(page) {
   if (!window.location.pathname.includes(page)) {
     window.location.href = page;
   } else {
-    console.log(page + " does not exist");
+    console.warn(page + " does not exist");
   }
 }
 
