@@ -352,6 +352,14 @@ a:hover {
   }
 }
 
+/* @media screen and (min-width: 1200px) {
+  .artContainer {
+    width: 650px;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+} */
+
 @media screen and (max-width: 1200px) {
   h1 {
     font-size: 100px;
