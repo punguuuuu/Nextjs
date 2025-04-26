@@ -22,7 +22,7 @@
 }
 
 .gallery img:hover {
-  cursor: pointer;
+  cursor: url("../cursors/15-Link-Select.cur"), pointer;
   border: 2px solid rgb(219, 217, 217);
 }
 
@@ -39,7 +39,7 @@
 
 .prev,
 .next {
-  cursor: pointer;
+  cursor: url("../cursors/15-Link-Select.cur"), pointer;
   width: auto;
   color: black;
   padding: 20px;
@@ -155,7 +155,7 @@
   .prev,
   .next {
     font-size: 40px;
-    cursor: pointer;
+    cursor: url("../cursors/15-Link-Select.cur"), pointer;
     position: absolute;
     width: auto;
     color: black;

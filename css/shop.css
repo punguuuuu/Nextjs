@@ -20,7 +20,7 @@ h2 {
 
 .item:hover {
   border: 2px solid rgb(219, 217, 217);
-  cursor: pointer;
+  cursor: url("../cursors/15-Link-Select.cur"), pointer;
 }
 
 .item img {
@@ -149,7 +149,7 @@ div.item .desc {
 
 .remove {
   color: red;
-  cursor: "pointer";
+  cursor: url("../cursors/15-Link-Select.cur"), pointer;
   font-size: 40px;
 }
 
@@ -158,7 +158,7 @@ div.item .desc {
   color: black;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 1000px) {
   #detail {
     width: 350px;
   }
@@ -167,14 +167,14 @@ div.item .desc {
     width: 350px;
   }
 
-  #addBtn{
+  #addBtn {
     font-size: 50px;
   }
 
-  #checkoutBtn{
+  #checkoutBtn {
     font-size: 50px;
   }
-  
+
   .detail-content {
     width: 80%;
     max-width: 400px;
@@ -188,7 +188,7 @@ div.item .desc {
   }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   #detail {
     width: 100%;
     transition: right 1s;
@@ -206,7 +206,7 @@ div.item .desc {
   }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   h2 {
     font-size: 80px;
   }
@@ -218,7 +218,7 @@ div.item .desc {
   .remove {
     font-size: 35px;
   }
-  
+
   #caption {
     font-size: 60px;
   }
