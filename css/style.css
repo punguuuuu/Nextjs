@@ -298,7 +298,7 @@ a:hover {
 }
 
 #canvas {
-  cursor: url("../cursors/15-Link-Select.cur"), pointer;
+  cursor: url("../cursors/7-Handwriting.cur"), pointer;
 }
 
 @keyframes vibrate {
